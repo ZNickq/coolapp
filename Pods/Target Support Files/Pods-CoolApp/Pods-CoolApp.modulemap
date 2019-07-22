@@ -1,0 +1,6 @@
+framework module Pods_CoolApp {
+  umbrella header "Pods-CoolApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
