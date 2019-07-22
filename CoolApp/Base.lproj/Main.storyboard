@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="CoolApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81N-dH-54v">
+                                <rect key="frame" x="271" y="201" width="482.5" height="386"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKD-q7-llQ">
+                                        <rect key="frame" x="48" y="100" width="386" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="XLH-Ha-vOW"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cool Logo" translatesAutoresizingMaskIntoConstraints="NO" id="M7d-3u-6SF">
+                                        <rect key="frame" x="88" y="21" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="M7d-3u-6SF" secondAttribute="height" multiplier="1:1" id="aZ9-3U-xDa"/>
+                                            <constraint firstAttribute="width" constant="70" id="vnb-O6-JGV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cool App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZh-tG-NcD">
+                                        <rect key="frame" x="187" y="32" width="158.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orr-hG-BHI">
+                                        <rect key="frame" x="28" y="136" width="426" height="218"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.792156862745098" green="0.85098039215686272" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qKD-q7-llQ" firstAttribute="width" secondItem="81N-dH-54v" secondAttribute="width" multiplier="0.8" id="2SB-iI-QKv"/>
+                                    <constraint firstAttribute="width" secondItem="81N-dH-54v" secondAttribute="height" multiplier="1.25:1" id="AL7-vS-QOz"/>
+                                    <constraint firstItem="bZh-tG-NcD" firstAttribute="leading" secondItem="M7d-3u-6SF" secondAttribute="trailing" constant="29" id="E8K-sD-jvO"/>
+                                    <constraint firstAttribute="trailing" secondItem="orr-hG-BHI" secondAttribute="trailing" constant="28.5" id="NPo-Bt-GEC"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bZh-tG-NcD" secondAttribute="trailing" constant="10" id="QBd-nN-9cS"/>
+                                    <constraint firstItem="M7d-3u-6SF" firstAttribute="leading" secondItem="81N-dH-54v" secondAttribute="leading" constant="88" id="QFV-uz-fM7"/>
+                                    <constraint firstItem="orr-hG-BHI" firstAttribute="top" secondItem="qKD-q7-llQ" secondAttribute="bottom" constant="35" id="VzS-jV-5fO"/>
+                                    <constraint firstItem="orr-hG-BHI" firstAttribute="leading" secondItem="81N-dH-54v" secondAttribute="leading" constant="28" id="XBv-1v-V8R"/>
+                                    <constraint firstItem="bZh-tG-NcD" firstAttribute="centerY" secondItem="M7d-3u-6SF" secondAttribute="centerY" id="dYP-hd-iu1"/>
+                                    <constraint firstAttribute="height" constant="386" id="gEN-MF-UTq"/>
+                                    <constraint firstItem="qKD-q7-llQ" firstAttribute="centerX" secondItem="81N-dH-54v" secondAttribute="centerX" id="klN-xQ-bUb"/>
+                                    <constraint firstItem="qKD-q7-llQ" firstAttribute="top" secondItem="81N-dH-54v" secondAttribute="top" constant="100" id="pvF-ze-kai"/>
+                                    <constraint firstItem="M7d-3u-6SF" firstAttribute="top" secondItem="81N-dH-54v" secondAttribute="top" constant="21" id="uyA-cc-z8i"/>
+                                    <constraint firstAttribute="bottom" secondItem="orr-hG-BHI" secondAttribute="bottom" constant="32" id="zYd-gw-QTe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="81N-dH-54v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="181" id="lUw-35-lmu"/>
+                            <constraint firstItem="81N-dH-54v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pts-KE-qIm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="orr-hG-BHI" id="VkT-CP-XGQ"/>
+                        <outlet property="mainView" destination="81N-dH-54v" id="hOU-N0-CrN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="48.6328125" y="20.3125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Cool Logo" width="42.666667938232422" height="42.666667938232422"/>
+    </resources>
 </document>
