@@ -1,3 +1,32 @@
-PODFILE CHECKSUM: dbd4936b1fcc7b09150bc11cecf423293d363ee9
+PODS:
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
+  - Realm (3.16.1):
+    - Realm/Headers (= 3.16.1)
+  - Realm/Headers (3.16.1)
+  - RealmSwift (3.16.1):
+    - Realm (= 3.16.1)
+  - SearchTextField (1.2.4)
+
+DEPENDENCIES:
+  - Charts
+  - RealmSwift
+  - SearchTextField
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Charts
+    - Realm
+    - RealmSwift
+    - SearchTextField
+
+SPEC CHECKSUMS:
+  Charts: ec1f57f9340054155691e84d4544a1d239d382c5
+  Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
+  RealmSwift: 486f2e09d5a8ccff63ed66e48d0846b111deb5e5
+  SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
+
+PODFILE CHECKSUM: 12badec11ac428c29338b6edc6e553fc636ede4e
 
 COCOAPODS: 1.7.1

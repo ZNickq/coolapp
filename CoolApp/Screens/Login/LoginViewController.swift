@@ -13,16 +13,16 @@ class LoginViewController: UIViewController {
     enum LoginFlowState {
         case none, initial, picker, quickOrder
         
-        var view: LoginSubview {
+        func view(frame: CGRect) -> LoginSubview {
             switch self {
             case .none:
-                return LoginSubview()
+                return LoginSubview(frame: frame)
             case .initial:
-                return UsernamePasswordView()
+                return UsernamePasswordView(frame: frame)
             case .picker:
-                return OptionPickerView()
+                return OptionPickerView(frame: frame)
             case .quickOrder:
-                return QuickOrderView()
+                return QuickOrderView(frame: frame)
             }
         }
     }
@@ -46,6 +46,13 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         
         state = .initial
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     private var currentView: LoginSubview? = nil;
@@ -55,9 +62,9 @@ class LoginViewController: UIViewController {
             each.removeFromSuperview()
         }
         
-        let newView = state.view
+        let newView = state.view(frame: containerView.bounds)
         
-        containerView.addSubview(newView.loadNib())
+        containerView.addSubview(newView)
         
         newView.delegate = self
         
@@ -74,8 +81,12 @@ extension LoginViewController: LoginViewDelegate {
             state = .picker
         case .quickOrder:
             state = .quickOrder
+        case .search:
+            performSegue(withIdentifier: "showQuickOrder", sender: self)
+        case .dashboards:
+            performSegue(withIdentifier: "showDashboard", sender: self)
         default:
-            fatalError("Not implemented yet!!")
+            fatalError("Not implemented yet!")
         }
     }
     
@@ -96,7 +107,6 @@ extension UIView {
     func beautify() {
         layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = 1.0
-        layer.cornerRadius = 5.0
         clipsToBounds = true
         
         layer.shadowPath =

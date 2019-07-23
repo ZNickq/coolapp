@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		213BCF6022E72849008E4F34 /* QuickOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF5F22E72849008E4F34 /* QuickOrderViewController.swift */; };
+		213BCF6222E73C27008E4F34 /* ColumnTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF6122E73C27008E4F34 /* ColumnTableViewHeader.swift */; };
+		213BCF6422E742CB008E4F34 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF6322E742CB008E4F34 /* UIColorExtensions.swift */; };
+		213BCF6722E744BD008E4F34 /* QuickOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF6622E744BD008E4F34 /* QuickOrderTableViewCell.xib */; };
+		213BCF6922E744FB008E4F34 /* QuickOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF6822E744FB008E4F34 /* QuickOrderTableViewCell.swift */; };
 		216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CA22E5B41E009E84B0 /* AppDelegate.swift */; };
 		216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CC22E5B41E009E84B0 /* LoginViewController.swift */; };
 		216539D022E5B41E009E84B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216539CE22E5B41E009E84B0 /* Main.storyboard */; };
@@ -21,11 +26,20 @@
 		216539EC22E5D7FD009E84B0 /* OptionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539EB22E5D7FD009E84B0 /* OptionPickerView.swift */; };
 		216539EE22E5DD7E009E84B0 /* QuickOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539ED22E5DD7E009E84B0 /* QuickOrderView.swift */; };
 		216539F022E5DD8F009E84B0 /* QuickOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216539EF22E5DD8F009E84B0 /* QuickOrderView.xib */; };
+		216539F322E5F100009E84B0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539F222E5F100009E84B0 /* Restaurant.swift */; };
+		216539F622E60458009E84B0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539F522E60458009E84B0 /* DashboardViewController.swift */; };
+		216539FA22E647EE009E84B0 /* ColumnTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216539F922E647EE009E84B0 /* ColumnTableViewHeader.xib */; };
+		216539FC22E650DC009E84B0 /* ColumnTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539FB22E650DC009E84B0 /* ColumnTableViewController.swift */; };
 		FF4918B6350005FC9F15DCEE /* Pods_CoolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2545048646A67A0FAFE88944 /* Pods_CoolApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EB68AD957A81D93313509FF /* Pods-CoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolApp.release.xcconfig"; path = "Target Support Files/Pods-CoolApp/Pods-CoolApp.release.xcconfig"; sourceTree = "<group>"; };
+		213BCF5F22E72849008E4F34 /* QuickOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOrderViewController.swift; sourceTree = "<group>"; };
+		213BCF6122E73C27008E4F34 /* ColumnTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnTableViewHeader.swift; sourceTree = "<group>"; };
+		213BCF6322E742CB008E4F34 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		213BCF6622E744BD008E4F34 /* QuickOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickOrderTableViewCell.xib; sourceTree = "<group>"; };
+		213BCF6822E744FB008E4F34 /* QuickOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOrderTableViewCell.swift; sourceTree = "<group>"; };
 		216539C722E5B41E009E84B0 /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216539CA22E5B41E009E84B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216539CC22E5B41E009E84B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +56,10 @@
 		216539EB22E5D7FD009E84B0 /* OptionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionPickerView.swift; sourceTree = "<group>"; };
 		216539ED22E5DD7E009E84B0 /* QuickOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOrderView.swift; sourceTree = "<group>"; };
 		216539EF22E5DD8F009E84B0 /* QuickOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickOrderView.xib; sourceTree = "<group>"; };
+		216539F222E5F100009E84B0 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		216539F522E60458009E84B0 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		216539F922E647EE009E84B0 /* ColumnTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColumnTableViewHeader.xib; sourceTree = "<group>"; };
+		216539FB22E650DC009E84B0 /* ColumnTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnTableViewController.swift; sourceTree = "<group>"; };
 		2545048646A67A0FAFE88944 /* Pods_CoolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA1E658A041F830AD840FD7 /* Pods-CoolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolApp.debug.xcconfig"; path = "Target Support Files/Pods-CoolApp/Pods-CoolApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +76,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213BCF5D22E72759008E4F34 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				213BCF6522E7449F008E4F34 /* Views */,
+				213BCF5F22E72849008E4F34 /* QuickOrderViewController.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		213BCF5E22E72817008E4F34 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				213BCF5D22E72759008E4F34 /* Order */,
+				216539DC22E5C748009E84B0 /* Login */,
+				216539F422E60442009E84B0 /* Dashboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		213BCF6522E7449F008E4F34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				213BCF6622E744BD008E4F34 /* QuickOrderTableViewCell.xib */,
+				213BCF6822E744FB008E4F34 /* QuickOrderTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		216539BE22E5B41E009E84B0 = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +125,9 @@
 		216539C922E5B41E009E84B0 /* CoolApp */ = {
 			isa = PBXGroup;
 			children = (
+				216539F122E5F0EE009E84B0 /* Model */,
+				213BCF5E22E72817008E4F34 /* Screens */,
 				216539E022E5C937009E84B0 /* Util */,
-				216539DC22E5C748009E84B0 /* Login */,
 				216539CA22E5B41E009E84B0 /* AppDelegate.swift */,
 				216539CE22E5B41E009E84B0 /* Main.storyboard */,
 				216539D122E5B420009E84B0 /* Assets.xcassets */,
@@ -117,9 +164,45 @@
 		216539E022E5C937009E84B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				216539F722E647B0009E84B0 /* Table */,
 				216539E122E5C954009E84B0 /* NibView.swift */,
+				213BCF6322E742CB008E4F34 /* UIColorExtensions.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		216539F122E5F0EE009E84B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				216539F222E5F100009E84B0 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		216539F422E60442009E84B0 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				216539F522E60458009E84B0 /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		216539F722E647B0009E84B0 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				216539F822E647CA009E84B0 /* View */,
+				216539FB22E650DC009E84B0 /* ColumnTableViewController.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		216539F822E647CA009E84B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				216539F922E647EE009E84B0 /* ColumnTableViewHeader.xib */,
+				213BCF6122E73C27008E4F34 /* ColumnTableViewHeader.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2703F5C58529FE779370B840 /* Pods */ = {
@@ -128,7 +211,6 @@
 				EBA1E658A041F830AD840FD7 /* Pods-CoolApp.debug.xcconfig */,
 				0EB68AD957A81D93313509FF /* Pods-CoolApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -151,6 +233,7 @@
 				216539C322E5B41E009E84B0 /* Sources */,
 				216539C422E5B41E009E84B0 /* Frameworks */,
 				216539C522E5B41E009E84B0 /* Resources */,
+				8359A1969F29182D306886F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,6 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213BCF6722E744BD008E4F34 /* QuickOrderTableViewCell.xib in Resources */,
+				216539FA22E647EE009E84B0 /* ColumnTableViewHeader.xib in Resources */,
 				216539D522E5B420009E84B0 /* LaunchScreen.storyboard in Resources */,
 				216539F022E5DD8F009E84B0 /* QuickOrderView.xib in Resources */,
 				216539D222E5B420009E84B0 /* Assets.xcassets in Resources */,
@@ -233,6 +318,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8359A1969F29182D306886F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoolApp/Pods-CoolApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoolApp/Pods-CoolApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoolApp/Pods-CoolApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -241,13 +343,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */,
+				213BCF6422E742CB008E4F34 /* UIColorExtensions.swift in Sources */,
 				216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */,
 				216539E622E5CB07009E84B0 /* LoginViewDelegate.swift in Sources */,
 				216539EE22E5DD7E009E84B0 /* QuickOrderView.swift in Sources */,
 				216539EC22E5D7FD009E84B0 /* OptionPickerView.swift in Sources */,
+				213BCF6222E73C27008E4F34 /* ColumnTableViewHeader.swift in Sources */,
 				216539E822E5CC25009E84B0 /* LoginSubview.swift in Sources */,
 				216539E222E5C954009E84B0 /* NibView.swift in Sources */,
+				216539F622E60458009E84B0 /* DashboardViewController.swift in Sources */,
+				213BCF6922E744FB008E4F34 /* QuickOrderTableViewCell.swift in Sources */,
 				216539E422E5C995009E84B0 /* UsernamePasswordView.swift in Sources */,
+				213BCF6022E72849008E4F34 /* QuickOrderViewController.swift in Sources */,
+				216539FC22E650DC009E84B0 /* ColumnTableViewController.swift in Sources */,
+				216539F322E5F100009E84B0 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

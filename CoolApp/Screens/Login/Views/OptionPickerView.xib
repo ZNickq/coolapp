@@ -39,13 +39,14 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCr-cs-NfO">
-                                    <rect key="frame" x="33" y="140.5" width="132.5" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="18" y="134.5" width="162.5" height="26.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qms-er-m8C">
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="198"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <connections>
                                         <action selector="createNewOrder:" destination="-1" eventType="touchUpInside" id="TZv-4g-7oo"/>
                                     </connections>
@@ -81,8 +82,8 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BI Dashboards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8S-70-mXI">
-                                    <rect key="frame" x="43" y="140.5" width="112" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="29.5" y="134.5" width="139" height="26.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>

@@ -7,16 +7,52 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    private(set) static var shared: AppDelegate!
+    
+    private(set) var realm: Realm!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        AppDelegate.shared = self
+        
+        setupMocking()
+        
         return true
+    }
+    
+    func setupMocking() {
+        let resetMocking = true
+        
+        if (resetMocking) {
+            try! FileManager.default.removeItem(at:Realm.Configuration.defaultConfiguration.fileURL!)
+        }
+        
+        // Get the default Realm
+        self.realm = try! Realm()
+        
+        let restaurants = realm.objects(Restaurant.self)
+        
+        
+        if (restaurants.count == 0) {
+            
+            let res = Restaurant(name: "Test Primaverii", id: 100)
+            let res2 = Restaurant(name: "Test2 Iancu Green", id: 102)
+            let res3 = Restaurant(name: "Test3 Expozitiei", id: 103)
+            
+            try? realm.write {
+                realm.add(res)
+                realm.add(res2)
+                realm.add(res3)
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
