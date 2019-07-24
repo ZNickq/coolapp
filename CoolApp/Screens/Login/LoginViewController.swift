@@ -58,17 +58,30 @@ class LoginViewController: UIViewController {
     private var currentView: LoginSubview? = nil;
     
     func updateState() {
-        for each in containerView.subviews {
-            each.removeFromSuperview()
+        UIView.animate(withDuration: 0.2, animations: {
+            self.containerView.subviews.forEach { $0.alpha = 0.0 }
+            self.containerView.layoutIfNeeded()
+        }) { [weak self] (_) in
+            guard let `self` = self else { return }
+            self.containerView.subviews.forEach { $0.removeFromSuperview() }
+            
+            let newView = self.state.view(frame: self.containerView.bounds)
+            newView.delegate = self
+            self.containerView.addSubview(newView)
+            
+            self.currentView = newView // Keeps ARC from deallocing
+            
+            newView.alpha = 0.0
+            self.containerView.layoutIfNeeded()
+            
+            UIView.animate(withDuration: 0.1, animations: {
+                newView.alpha = 1.0
+                self.containerView.layoutIfNeeded()
+            })
+            
         }
         
-        let newView = state.view(frame: containerView.bounds)
         
-        containerView.addSubview(newView)
-        
-        newView.delegate = self
-        
-        currentView = newView // Keeps ARC from deallocing
     }
     
 }
@@ -103,16 +116,16 @@ extension LoginViewController {
 extension UIView {
     
     func beautify() {
-        layer.borderColor = UIColor.lightGray.cgColor
-        layer.borderWidth = 1.0
+        //layer.borderColor = UIColor.lightGray.cgColor
+        //layer.borderWidth = 1.0
         clipsToBounds = true
         
         layer.shadowPath =
             UIBezierPath(roundedRect: bounds,
                          cornerRadius: layer.cornerRadius).cgPath
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 3, height: 3)
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 4, height: 4)
         layer.shadowRadius = 1
         layer.masksToBounds = false
     }

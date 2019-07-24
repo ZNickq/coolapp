@@ -19,6 +19,8 @@
 		213BCF7522E7A5FF008E4F34 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF7422E7A5FF008E4F34 /* FilterTableViewCell.swift */; };
 		213BCF7722E873EF008E4F34 /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF7622E873EF008E4F34 /* SideMenuNavigationController.swift */; };
 		213BCF7A22E88364008E4F34 /* RestaurantSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF7922E88364008E4F34 /* RestaurantSearchTextField.swift */; };
+		213BCF7D22E8B129008E4F34 /* UniversLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF7C22E8B129008E4F34 /* UniversLTStd-Light.otf */; };
+		213BCF7F22E8B227008E4F34 /* UniversLTStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF7E22E8B227008E4F34 /* UniversLTStd-Bold.otf */; };
 		216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CA22E5B41E009E84B0 /* AppDelegate.swift */; };
 		216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CC22E5B41E009E84B0 /* LoginViewController.swift */; };
 		216539D022E5B41E009E84B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216539CE22E5B41E009E84B0 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		213BCF7422E7A5FF008E4F34 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		213BCF7622E873EF008E4F34 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationController.swift; sourceTree = "<group>"; };
 		213BCF7922E88364008E4F34 /* RestaurantSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchTextField.swift; sourceTree = "<group>"; };
+		213BCF7C22E8B129008E4F34 /* UniversLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversLTStd-Light.otf"; sourceTree = "<group>"; };
+		213BCF7E22E8B227008E4F34 /* UniversLTStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversLTStd-Bold.otf"; sourceTree = "<group>"; };
 		216539C722E5B41E009E84B0 /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216539CA22E5B41E009E84B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216539CC22E5B41E009E84B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		213BCF7B22E8B110008E4F34 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				213BCF7E22E8B227008E4F34 /* UniversLTStd-Bold.otf */,
+				213BCF7C22E8B129008E4F34 /* UniversLTStd-Light.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		216539BE22E5B41E009E84B0 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +181,7 @@
 				216539D122E5B420009E84B0 /* Assets.xcassets */,
 				216539D322E5B420009E84B0 /* LaunchScreen.storyboard */,
 				216539D622E5B420009E84B0 /* Info.plist */,
+				213BCF7B22E8B110008E4F34 /* Resources */,
 			);
 			path = CoolApp;
 			sourceTree = "<group>";
@@ -328,7 +342,9 @@
 				213BCF6D22E7A220008E4F34 /* FilterView.xib in Resources */,
 				216539D022E5B41E009E84B0 /* Main.storyboard in Resources */,
 				216539DF22E5C777009E84B0 /* UsernamePasswordView.xib in Resources */,
+				213BCF7F22E8B227008E4F34 /* UniversLTStd-Bold.otf in Resources */,
 				216539EA22E5D201009E84B0 /* OptionPickerView.xib in Resources */,
+				213BCF7D22E8B129008E4F34 /* UniversLTStd-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

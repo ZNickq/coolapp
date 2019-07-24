@@ -24,6 +24,9 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainView.layer.borderWidth = 1.0
+        mainView.layer.borderColor = UIColor.lightGray.cgColor
+        
         mainView.beautify()
 
         setupFirstPieChart()

@@ -25,11 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupMocking()
         
+        for family: String in UIFont.familyNames
+        {
+            print(family)
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
+
+        
         return true
     }
     
     func setupMocking() {
-        let resetMocking = true
+        let resetMocking = false
         
         if (resetMocking) {
             try! FileManager.default.removeItem(at:Realm.Configuration.defaultConfiguration.fileURL!)

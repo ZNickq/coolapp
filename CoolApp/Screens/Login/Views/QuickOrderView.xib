@@ -37,7 +37,7 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p2-84-6kE">
                     <rect key="frame" x="151.5" y="124" width="123" height="60"/>
-                    <color key="backgroundColor" red="0.0" green="0.45882352941176469" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.1960784314" green="0.29411764709999999" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="9p2-84-6kE" secondAttribute="height" multiplier="41:20" id="BJl-EP-AGJ"/>
                         <constraint firstAttribute="width" constant="123" id="dVN-gc-JXU"/>
