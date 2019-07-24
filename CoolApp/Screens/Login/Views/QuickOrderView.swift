@@ -7,36 +7,17 @@
 //
 
 import UIKit
-import SearchTextField
 
 class QuickOrderView: LoginSubview {
 
-    @IBOutlet weak var restaurantSearchTextField: SearchTextField!
+    @IBOutlet weak var restaurantSearchTextField: RestaurantSearchTextField!
     @IBOutlet weak var restaurantDate: UITextField!
     
     private let datePicker = UIDatePicker()
     
     override func setupAppearance() {
         setupDatePicker()
-        
-        restaurantSearchTextField.theme.font = UIFont.systemFont(ofSize: 15)
     
-        restaurantSearchTextField.userStoppedTypingHandler = {
-            if let criteria = self.restaurantSearchTextField.text {
-                if criteria.count > 1 {
-                    self.restaurantSearchTextField.showLoadingIndicator()
-                    
-                    self.searchMoreItemsInBackground(criteria) { results in
-                        // Set new items to filter
-                        self.restaurantSearchTextField.filterItems(results)
-                        
-                        // Hide loading indicator
-                        self.restaurantSearchTextField.stopLoadingIndicator()
-                    }
-                }
-            }
-        }
-        
         let item = restaurantSearchTextField.inputAssistantItem;
         item.leadingBarButtonGroups = [];
         item.trailingBarButtonGroups = [];
@@ -73,17 +54,6 @@ class QuickOrderView: LoginSubview {
     
     @IBAction func searchTapped(_ sender: Any) {
         delegate?.nextTapped(option: .search)
-    }
-    
-    private func searchMoreItemsInBackground(_ criteria: String, completion: (([SearchTextFieldItem]) -> Void)) {
-        
-        let pp = AppDelegate.shared.realm.objects(Restaurant.self).filter { (each) -> Bool in
-            "\(each.id)".localizedCaseInsensitiveContains(criteria) || each.name.localizedCaseInsensitiveContains(criteria)
-        }
-        
-        completion(pp.map({ (each) -> SearchTextFieldItem in
-            SearchTextFieldItem(title: each.name, subtitle: "\(each.id)")
-        }))
     }
     
     

@@ -317,21 +317,203 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O8R-lM-9ew"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Quick Order" id="3WG-Q8-Kl0"/>
+                    <navigationItem key="navigationItem" title="Quick Order" id="3WG-Q8-Kl0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Navigation Drawer" id="Nwa-jS-wBQ">
+                            <connections>
+                                <segue destination="Ugg-8e-a3Q" kind="presentation" id="FmV-xc-o5Y"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="Search" id="nFi-h7-qTY">
+                                <connections>
+                                    <action selector="searchTapped:" destination="nZ0-rv-Rzi" id="8aU-xR-z96"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="done" id="Dkf-8G-c6M">
+                                <textField key="customView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Restaurant name or ID" textAlignment="natural" minimumFontSize="17" id="8gH-IY-Jv7" customClass="RestaurantSearchTextField" customModule="CoolApp" customModuleProvider="target">
+                                    <rect key="frame" x="742" y="10" width="227" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                </textField>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="bigRestaurantView" destination="YZc-ZF-sXd" id="s34-4W-EPG"/>
                         <outlet property="columnedTableView" destination="cGj-bT-aeo" id="Xx5-DH-sId"/>
                         <outlet property="filterHeightConstraint" destination="UCg-Ih-DeT" id="LTI-r0-ayM"/>
                         <outlet property="filterView" destination="7Eq-Pq-GBo" id="mXR-5L-FEv"/>
+                        <outlet property="restaurantSearchTextField" destination="8gH-IY-Jv7" id="7be-5f-d0N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pqd-WL-oTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1371.6796875" y="435.9375"/>
         </scene>
+        <!--Cool App-->
+        <scene sceneID="FRH-sO-cNP">
+            <objects>
+                <viewController id="3Ys-rR-hbo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b0L-r6-uFt">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="698"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thc-4y-frC">
+                                <rect key="frame" x="48" y="20" width="144" height="144"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frown" translatesAutoresizingMaskIntoConstraints="NO" id="Kc1-hc-x6I">
+                                        <rect key="frame" x="29" y="8" width="86" height="86.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Kc1-hc-x6I" secondAttribute="height" id="d0i-ei-xvF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undelivered products" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMQ-Jz-f1W">
+                                        <rect key="frame" x="0.0" y="99.5" width="144" height="41"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.54117647058823526" green="0.67843137254901964" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="iMQ-Jz-f1W" firstAttribute="top" secondItem="Kc1-hc-x6I" secondAttribute="bottom" constant="5" id="FlH-b3-Oak"/>
+                                    <constraint firstItem="Kc1-hc-x6I" firstAttribute="width" secondItem="thc-4y-frC" secondAttribute="width" multiplier="0.6" id="Fs1-hy-rqI"/>
+                                    <constraint firstItem="Kc1-hc-x6I" firstAttribute="centerX" secondItem="thc-4y-frC" secondAttribute="centerX" id="RhR-SL-nFG"/>
+                                    <constraint firstAttribute="trailing" secondItem="iMQ-Jz-f1W" secondAttribute="trailing" id="YlV-p6-0XS"/>
+                                    <constraint firstItem="iMQ-Jz-f1W" firstAttribute="leading" secondItem="thc-4y-frC" secondAttribute="leading" id="m6d-Fr-enh"/>
+                                    <constraint firstAttribute="width" secondItem="thc-4y-frC" secondAttribute="height" multiplier="1:1" id="pnS-0O-4Is"/>
+                                    <constraint firstItem="Kc1-hc-x6I" firstAttribute="top" secondItem="thc-4y-frC" secondAttribute="top" constant="8" id="v4J-5E-Msl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXr-Ai-AxS">
+                                <rect key="frame" x="48" y="175" width="144" height="144"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shopping cart" translatesAutoresizingMaskIntoConstraints="NO" id="NqH-rb-bSD">
+                                        <rect key="frame" x="29" y="5" width="86" height="86.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NqH-rb-bSD" secondAttribute="height" id="mEq-fn-18J"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orders History" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXv-GW-Mba">
+                                        <rect key="frame" x="0.0" y="96.5" width="144" height="20.5"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.54117647059999996" green="0.67843137249999996" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NqH-rb-bSD" firstAttribute="top" secondItem="AXr-Ai-AxS" secondAttribute="top" constant="5" id="9Zd-O6-tvG"/>
+                                    <constraint firstItem="jXv-GW-Mba" firstAttribute="leading" secondItem="AXr-Ai-AxS" secondAttribute="leading" id="Ije-0k-HE0"/>
+                                    <constraint firstItem="jXv-GW-Mba" firstAttribute="top" secondItem="NqH-rb-bSD" secondAttribute="bottom" constant="5" id="M4r-cz-loG"/>
+                                    <constraint firstAttribute="trailing" secondItem="jXv-GW-Mba" secondAttribute="trailing" id="TIR-OY-ctF"/>
+                                    <constraint firstItem="NqH-rb-bSD" firstAttribute="centerX" secondItem="AXr-Ai-AxS" secondAttribute="centerX" id="kx1-by-u1G"/>
+                                    <constraint firstAttribute="width" secondItem="AXr-Ai-AxS" secondAttribute="height" multiplier="1:1" id="sGq-oD-xlr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZK-S1-n9r">
+                                <rect key="frame" x="48" y="330" width="144" height="144"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shopping cart Plus" translatesAutoresizingMaskIntoConstraints="NO" id="Ial-1Q-04F">
+                                        <rect key="frame" x="29" y="7" width="86" height="86.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ial-1Q-04F" secondAttribute="height" id="YZF-C7-5EG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Order" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv8-Iy-Wf7">
+                                        <rect key="frame" x="30.5" y="98.5" width="83" height="20.5"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.54117647059999996" green="0.67843137249999996" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ial-1Q-04F" firstAttribute="centerX" secondItem="LZK-S1-n9r" secondAttribute="centerX" id="4Kp-Rt-wbE"/>
+                                    <constraint firstItem="Ial-1Q-04F" firstAttribute="width" secondItem="Ial-1Q-04F" secondAttribute="height" id="DNq-F8-432"/>
+                                    <constraint firstItem="Kv8-Iy-Wf7" firstAttribute="top" secondItem="Ial-1Q-04F" secondAttribute="bottom" constant="5" id="Jun-yb-HnQ"/>
+                                    <constraint firstItem="Ial-1Q-04F" firstAttribute="top" secondItem="LZK-S1-n9r" secondAttribute="top" constant="7" id="ZWP-Lo-xgQ"/>
+                                    <constraint firstAttribute="width" secondItem="LZK-S1-n9r" secondAttribute="height" multiplier="1:1" id="oK8-QL-h0D"/>
+                                    <constraint firstItem="Kv8-Iy-Wf7" firstAttribute="centerX" secondItem="Ial-1Q-04F" secondAttribute="centerX" id="s3h-Xm-jLS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lP-N5-fLB">
+                                <rect key="frame" x="48" y="482" width="144" height="144"/>
+                                <color key="backgroundColor" red="0.54117647059999996" green="0.67843137249999996" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ordered List" translatesAutoresizingMaskIntoConstraints="NO" id="zfT-LJ-U7a">
+                                <rect key="frame" x="77" y="492" width="86" height="86.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendors list" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZW-IF-nqB">
+                                <rect key="frame" x="75" y="583.5" width="90" height="20.5"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7lP-N5-fLB" firstAttribute="width" secondItem="LZK-S1-n9r" secondAttribute="width" id="0Wc-vK-ylm"/>
+                            <constraint firstItem="zfT-LJ-U7a" firstAttribute="width" secondItem="Ial-1Q-04F" secondAttribute="width" id="74C-1Y-DT3"/>
+                            <constraint firstItem="oZW-IF-nqB" firstAttribute="centerX" secondItem="zfT-LJ-U7a" secondAttribute="centerX" id="8Sj-uf-tyD"/>
+                            <constraint firstItem="Ial-1Q-04F" firstAttribute="width" secondItem="NqH-rb-bSD" secondAttribute="width" id="AIj-y6-PPR"/>
+                            <constraint firstItem="7lP-N5-fLB" firstAttribute="top" secondItem="zfT-LJ-U7a" secondAttribute="bottom" constant="-96.5" id="BzN-JQ-Ena"/>
+                            <constraint firstItem="thc-4y-frC" firstAttribute="top" secondItem="oGB-Kv-Bcl" secondAttribute="top" constant="20" id="E8L-sF-MLR"/>
+                            <constraint firstItem="AXr-Ai-AxS" firstAttribute="top" secondItem="thc-4y-frC" secondAttribute="bottom" constant="11" id="G3f-60-uB4"/>
+                            <constraint firstItem="7lP-N5-fLB" firstAttribute="centerX" secondItem="LZK-S1-n9r" secondAttribute="centerX" id="Gdb-to-q0r"/>
+                            <constraint firstItem="LZK-S1-n9r" firstAttribute="top" secondItem="AXr-Ai-AxS" secondAttribute="bottom" constant="11" id="Hqb-sO-Swo"/>
+                            <constraint firstItem="LZK-S1-n9r" firstAttribute="centerX" secondItem="AXr-Ai-AxS" secondAttribute="centerX" id="Jmg-Sc-lVa"/>
+                            <constraint firstItem="AXr-Ai-AxS" firstAttribute="width" secondItem="thc-4y-frC" secondAttribute="width" id="OKL-tE-hhH"/>
+                            <constraint firstItem="7lP-N5-fLB" firstAttribute="top" secondItem="LZK-S1-n9r" secondAttribute="bottom" constant="8" id="UCR-Mj-M4c"/>
+                            <constraint firstItem="LZK-S1-n9r" firstAttribute="width" secondItem="AXr-Ai-AxS" secondAttribute="width" id="Wmu-EH-7d4"/>
+                            <constraint firstItem="zfT-LJ-U7a" firstAttribute="centerX" secondItem="7lP-N5-fLB" secondAttribute="centerX" id="YAv-5L-2wa"/>
+                            <constraint firstItem="zfT-LJ-U7a" firstAttribute="width" secondItem="zfT-LJ-U7a" secondAttribute="height" id="bbR-sc-yfF"/>
+                            <constraint firstItem="7lP-N5-fLB" firstAttribute="width" secondItem="7lP-N5-fLB" secondAttribute="height" multiplier="1:1" id="nMa-Mf-s4H"/>
+                            <constraint firstItem="thc-4y-frC" firstAttribute="width" secondItem="b0L-r6-uFt" secondAttribute="width" multiplier="0.6" id="oDs-8P-4lb"/>
+                            <constraint firstItem="NqH-rb-bSD" firstAttribute="width" secondItem="Kc1-hc-x6I" secondAttribute="width" id="oZj-uM-NVK"/>
+                            <constraint firstItem="thc-4y-frC" firstAttribute="centerX" secondItem="oGB-Kv-Bcl" secondAttribute="centerX" id="uSE-RQ-px1"/>
+                            <constraint firstItem="AXr-Ai-AxS" firstAttribute="centerX" secondItem="thc-4y-frC" secondAttribute="centerX" id="x6I-Uj-P63"/>
+                            <constraint firstItem="oZW-IF-nqB" firstAttribute="top" secondItem="zfT-LJ-U7a" secondAttribute="bottom" constant="5" id="zbe-6B-nwI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oGB-Kv-Bcl"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cool App" id="8Y7-wz-mYi"/>
+                    <size key="freeformSize" width="240" height="768"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bL5-XO-mf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198.828125" y="1372.65625"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="jO6-cW-cBv">
+            <objects>
+                <navigationController id="Ugg-8e-a3Q" customClass="SideMenuNavigationController" customModule="CoolApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="QCY-ls-9AK">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.19607843137254902" green="0.29411764705882354" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="3Ys-rR-hbo" kind="relationship" relationship="rootViewController" id="K8o-2n-TCp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pXN-EF-tSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="487" y="1373"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Cool Logo" width="42.666667938232422" height="42.666667938232422"/>
         <image name="Filter" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="Frown" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="Navigation Drawer" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="Ordered List" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="Search" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="Shopping cart" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="Shopping cart Plus" width="42.666667938232422" height="42.666667938232422"/>
     </resources>
 </document>

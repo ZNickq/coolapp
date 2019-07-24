@@ -8,5 +8,6 @@ target 'CoolApp' do
   pod "SearchTextField"
   pod "RealmSwift"
   pod "Charts"
+  pod "SideMenu"
 
 end

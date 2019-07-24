@@ -8,11 +8,13 @@ PODS:
   - RealmSwift (3.16.1):
     - Realm (= 3.16.1)
   - SearchTextField (1.2.4)
+  - SideMenu (5.0.3)
 
 DEPENDENCIES:
   - Charts
   - RealmSwift
   - SearchTextField
+  - SideMenu
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -20,13 +22,15 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SearchTextField
+    - SideMenu
 
 SPEC CHECKSUMS:
   Charts: ec1f57f9340054155691e84d4544a1d239d382c5
   Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
   RealmSwift: 486f2e09d5a8ccff63ed66e48d0846b111deb5e5
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
 
-PODFILE CHECKSUM: 12badec11ac428c29338b6edc6e553fc636ede4e
+PODFILE CHECKSUM: 8644bd66bd07e018373c96304a8b1f190c2ae829
 
 COCOAPODS: 1.7.1

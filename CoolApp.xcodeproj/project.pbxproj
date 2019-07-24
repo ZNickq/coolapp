@@ -17,6 +17,8 @@
 		213BCF7122E7A505008E4F34 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF6E22E7A232008E4F34 /* FilterView.swift */; };
 		213BCF7322E7A5B2008E4F34 /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF7222E7A5B2008E4F34 /* FilterTableViewCell.xib */; };
 		213BCF7522E7A5FF008E4F34 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF7422E7A5FF008E4F34 /* FilterTableViewCell.swift */; };
+		213BCF7722E873EF008E4F34 /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF7622E873EF008E4F34 /* SideMenuNavigationController.swift */; };
+		213BCF7A22E88364008E4F34 /* RestaurantSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF7922E88364008E4F34 /* RestaurantSearchTextField.swift */; };
 		216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CA22E5B41E009E84B0 /* AppDelegate.swift */; };
 		216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CC22E5B41E009E84B0 /* LoginViewController.swift */; };
 		216539D022E5B41E009E84B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216539CE22E5B41E009E84B0 /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 		213BCF6E22E7A232008E4F34 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		213BCF7222E7A5B2008E4F34 /* FilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterTableViewCell.xib; path = CoolApp/Screens/Order/Views/FilterTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		213BCF7422E7A5FF008E4F34 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		213BCF7622E873EF008E4F34 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationController.swift; sourceTree = "<group>"; };
+		213BCF7922E88364008E4F34 /* RestaurantSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchTextField.swift; sourceTree = "<group>"; };
 		216539C722E5B41E009E84B0 /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216539CA22E5B41E009E84B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216539CC22E5B41E009E84B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				213BCF5D22E72759008E4F34 /* Order */,
 				216539DC22E5C748009E84B0 /* Login */,
 				216539F422E60442009E84B0 /* Dashboard */,
+				213BCF7622E873EF008E4F34 /* SideMenuNavigationController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -124,6 +129,14 @@
 				213BCF7422E7A5FF008E4F34 /* FilterTableViewCell.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		213BCF7822E88352008E4F34 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				213BCF7922E88364008E4F34 /* RestaurantSearchTextField.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		216539BE22E5B41E009E84B0 = {
@@ -186,6 +199,7 @@
 		216539E022E5C937009E84B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				213BCF7822E88352008E4F34 /* Search */,
 				216539F722E647B0009E84B0 /* Table */,
 				216539E122E5C954009E84B0 /* NibView.swift */,
 				213BCF6322E742CB008E4F34 /* UIColorExtensions.swift */,
@@ -369,6 +383,7 @@
 			files = (
 				216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */,
 				213BCF6422E742CB008E4F34 /* UIColorExtensions.swift in Sources */,
+				213BCF7722E873EF008E4F34 /* SideMenuNavigationController.swift in Sources */,
 				216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */,
 				216539E622E5CB07009E84B0 /* LoginViewDelegate.swift in Sources */,
 				216539EE22E5DD7E009E84B0 /* QuickOrderView.swift in Sources */,
@@ -380,6 +395,7 @@
 				213BCF6B22E788F6008E4F34 /* Product.swift in Sources */,
 				213BCF7122E7A505008E4F34 /* FilterView.swift in Sources */,
 				216539F622E60458009E84B0 /* DashboardViewController.swift in Sources */,
+				213BCF7A22E88364008E4F34 /* RestaurantSearchTextField.swift in Sources */,
 				213BCF6922E744FB008E4F34 /* QuickOrderTableViewCell.swift in Sources */,
 				216539E422E5C995009E84B0 /* UsernamePasswordView.swift in Sources */,
 				213BCF6022E72849008E4F34 /* QuickOrderViewController.swift in Sources */,

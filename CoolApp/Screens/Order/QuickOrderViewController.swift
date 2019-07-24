@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SearchTextField
 
 class QuickOrderViewController: ColumnTableViewController {
 
@@ -20,6 +21,8 @@ class QuickOrderViewController: ColumnTableViewController {
     
     @IBOutlet weak var filterView: FilterView!
     @IBOutlet weak var filterHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var restaurantSearchTextField: SearchTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +77,26 @@ class QuickOrderViewController: ColumnTableViewController {
         return 0
     }
 
+}
+
+// Methods for handling search / restaurant change
+extension QuickOrderViewController {
+    
+    @IBAction func searchTapped(_ sender: Any) {
+        guard let field = restaurantSearchTextField else {
+            return
+        }
+        
+        field.isHidden = !field.isHidden
+        field.text = ""
+        
+        if !field.isHidden {
+            restaurantSearchTextField.becomeFirstResponder()
+        } else {
+            restaurantSearchTextField.resignFirstResponder()
+        }
+    }
+    
 }
 
 extension QuickOrderViewController: FilterViewDelegate {
