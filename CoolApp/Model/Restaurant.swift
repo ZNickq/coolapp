@@ -11,8 +11,8 @@ import RealmSwift
 
 class Restaurant: RealmSwift.Object {
     
-    @objc dynamic var name: String = ""
     @objc dynamic var id: Int = -1
+    @objc dynamic var name: String = ""
     
 //    init(id: Int, name: String) {
 //        self.name = name;

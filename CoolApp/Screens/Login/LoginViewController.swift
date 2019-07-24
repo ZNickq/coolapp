@@ -85,8 +85,6 @@ extension LoginViewController: LoginViewDelegate {
             performSegue(withIdentifier: "showQuickOrder", sender: self)
         case .dashboards:
             performSegue(withIdentifier: "showDashboard", sender: self)
-        default:
-            fatalError("Not implemented yet!")
         }
     }
     
@@ -114,7 +112,7 @@ extension UIView {
                          cornerRadius: layer.cornerRadius).cgPath
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 5, height: 5)
+        layer.shadowOffset = CGSize(width: 3, height: 3)
         layer.shadowRadius = 1
         layer.masksToBounds = false
     }

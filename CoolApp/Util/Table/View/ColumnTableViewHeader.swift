@@ -32,7 +32,7 @@ class ColumnTableViewHeader: NibView {
             
             let label = UILabel()
             label.textAlignment = .center
-            label.backgroundColor = UIColor.oracleRed
+            label.backgroundColor = UIColor.oracleDarkSlate
             label.textColor = UIColor.white
             label.font = UIFont.systemFont(ofSize: 22)
             label.text = sectionText

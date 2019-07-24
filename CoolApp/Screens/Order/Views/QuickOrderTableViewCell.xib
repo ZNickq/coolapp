@@ -48,6 +48,9 @@
                             <subviews>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SyG-h4-mbB">
                                     <rect key="frame" x="26.5" y="9.5" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="switchTapped:" destination="Vy9-mV-jpm" eventType="valueChanged" id="leQ-Ay-6no"/>
+                                    </connections>
                                 </switch>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,8 +68,12 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2XJ-cw-yCC">
+                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2XJ-cw-yCC">
                                     <rect key="frame" x="70" y="10.5" width="94" height="29"/>
+                                    <color key="tintColor" red="0.5123015033101106" green="0.52053331055829466" blue="0.53107420200018707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="stepperChanged:" destination="Vy9-mV-jpm" eventType="valueChanged" id="ktB-nr-GlG"/>
+                                    </connections>
                                 </stepper>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,7 +106,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="bYt-ep-R2k"/>
             <connections>
+                <outlet property="consumptionLabel" destination="T1k-mO-d0I" id="Ptp-lF-ClE"/>
+                <outlet property="onHandLabel" destination="Efk-YP-6Bt" id="1QQ-6O-hns"/>
+                <outlet property="orderAmountLabel" destination="gnc-7T-3sk" id="r8t-XG-g43"/>
+                <outlet property="orderStepper" destination="2XJ-cw-yCC" id="ulM-VE-rrF"/>
+                <outlet property="productNameLabel" destination="phq-97-zjV" id="ehH-sf-WHB"/>
+                <outlet property="reorderSwitch" destination="SyG-h4-mbB" id="Ae9-wl-gtq"/>
                 <outlet property="stackView" destination="Mqj-ra-xmP" id="LlN-Cc-0m6"/>
+                <outlet property="suggestedOrderLabel" destination="Rs1-Oc-kD2" id="ypb-nf-1UO"/>
             </connections>
             <point key="canvasLocation" x="102.89855072463769" y="-235.04464285714283"/>
         </view>

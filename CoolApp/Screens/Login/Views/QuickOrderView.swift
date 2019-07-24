@@ -82,7 +82,7 @@ class QuickOrderView: LoginSubview {
         }
         
         completion(pp.map({ (each) -> SearchTextFieldItem in
-            return SearchTextFieldItem.init(title: each.name, subtitle: "\(each.id)")
+            SearchTextFieldItem(title: each.name, subtitle: "\(each.id)")
         }))
     }
     

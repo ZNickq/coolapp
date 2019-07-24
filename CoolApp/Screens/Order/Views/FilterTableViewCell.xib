@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FilterTableViewCell" customModule="CoolApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="766" height="66"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ao-c1-f8k">
+                    <rect key="frame" x="20" y="27.5" width="110" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-7K-zMD">
+                    <rect key="frame" x="695" y="22.5" width="51" height="31"/>
+                    <connections>
+                        <action selector="onSwitchTapped:" destination="iN0-l3-epB" eventType="valueChanged" id="N7r-2a-avs"/>
+                    </connections>
+                </switch>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ydx-7K-zMD" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="8Wy-UU-xIq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ydx-7K-zMD" secondAttribute="trailing" constant="22" id="U3n-2d-5Xz"/>
+                <constraint firstItem="4Ao-c1-f8k" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="wUC-Io-WYd"/>
+                <constraint firstItem="4Ao-c1-f8k" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="yqD-Lw-m81"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="productSwitch" destination="ydx-7K-zMD" id="SgW-XK-ba7"/>
+                <outlet property="productTypeLabel" destination="4Ao-c1-f8k" id="ltf-dJ-mtE"/>
+            </connections>
+            <point key="canvasLocation" x="302.89855072463769" y="-242.41071428571428"/>
+        </view>
+    </objects>
+</document>

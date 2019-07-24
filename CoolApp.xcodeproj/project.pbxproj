@@ -12,6 +12,11 @@
 		213BCF6422E742CB008E4F34 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF6322E742CB008E4F34 /* UIColorExtensions.swift */; };
 		213BCF6722E744BD008E4F34 /* QuickOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF6622E744BD008E4F34 /* QuickOrderTableViewCell.xib */; };
 		213BCF6922E744FB008E4F34 /* QuickOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF6822E744FB008E4F34 /* QuickOrderTableViewCell.swift */; };
+		213BCF6B22E788F6008E4F34 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF6A22E788F6008E4F34 /* Product.swift */; };
+		213BCF6D22E7A220008E4F34 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF6C22E7A220008E4F34 /* FilterView.xib */; };
+		213BCF7122E7A505008E4F34 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF6E22E7A232008E4F34 /* FilterView.swift */; };
+		213BCF7322E7A5B2008E4F34 /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF7222E7A5B2008E4F34 /* FilterTableViewCell.xib */; };
+		213BCF7522E7A5FF008E4F34 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF7422E7A5FF008E4F34 /* FilterTableViewCell.swift */; };
 		216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CA22E5B41E009E84B0 /* AppDelegate.swift */; };
 		216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CC22E5B41E009E84B0 /* LoginViewController.swift */; };
 		216539D022E5B41E009E84B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216539CE22E5B41E009E84B0 /* Main.storyboard */; };
@@ -40,6 +45,11 @@
 		213BCF6322E742CB008E4F34 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		213BCF6622E744BD008E4F34 /* QuickOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickOrderTableViewCell.xib; sourceTree = "<group>"; };
 		213BCF6822E744FB008E4F34 /* QuickOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOrderTableViewCell.swift; sourceTree = "<group>"; };
+		213BCF6A22E788F6008E4F34 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		213BCF6C22E7A220008E4F34 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		213BCF6E22E7A232008E4F34 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		213BCF7222E7A5B2008E4F34 /* FilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterTableViewCell.xib; path = CoolApp/Screens/Order/Views/FilterTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		213BCF7422E7A5FF008E4F34 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		216539C722E5B41E009E84B0 /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216539CA22E5B41E009E84B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216539CC22E5B41E009E84B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -98,10 +108,22 @@
 		213BCF6522E7449F008E4F34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				213BCF7022E7A4DB008E4F34 /* Filter */,
 				213BCF6622E744BD008E4F34 /* QuickOrderTableViewCell.xib */,
 				213BCF6822E744FB008E4F34 /* QuickOrderTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		213BCF7022E7A4DB008E4F34 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				213BCF6C22E7A220008E4F34 /* FilterView.xib */,
+				213BCF6E22E7A232008E4F34 /* FilterView.swift */,
+				213BCF7222E7A5B2008E4F34 /* FilterTableViewCell.xib */,
+				213BCF7422E7A5FF008E4F34 /* FilterTableViewCell.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		216539BE22E5B41E009E84B0 = {
@@ -175,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				216539F222E5F100009E84B0 /* Restaurant.swift */,
+				213BCF6A22E788F6008E4F34 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,8 +308,10 @@
 				213BCF6722E744BD008E4F34 /* QuickOrderTableViewCell.xib in Resources */,
 				216539FA22E647EE009E84B0 /* ColumnTableViewHeader.xib in Resources */,
 				216539D522E5B420009E84B0 /* LaunchScreen.storyboard in Resources */,
+				213BCF7322E7A5B2008E4F34 /* FilterTableViewCell.xib in Resources */,
 				216539F022E5DD8F009E84B0 /* QuickOrderView.xib in Resources */,
 				216539D222E5B420009E84B0 /* Assets.xcassets in Resources */,
+				213BCF6D22E7A220008E4F34 /* FilterView.xib in Resources */,
 				216539D022E5B41E009E84B0 /* Main.storyboard in Resources */,
 				216539DF22E5C777009E84B0 /* UsernamePasswordView.xib in Resources */,
 				216539EA22E5D201009E84B0 /* OptionPickerView.xib in Resources */,
@@ -351,6 +376,9 @@
 				213BCF6222E73C27008E4F34 /* ColumnTableViewHeader.swift in Sources */,
 				216539E822E5CC25009E84B0 /* LoginSubview.swift in Sources */,
 				216539E222E5C954009E84B0 /* NibView.swift in Sources */,
+				213BCF7522E7A5FF008E4F34 /* FilterTableViewCell.swift in Sources */,
+				213BCF6B22E788F6008E4F34 /* Product.swift in Sources */,
+				213BCF7122E7A505008E4F34 /* FilterView.swift in Sources */,
 				216539F622E60458009E84B0 /* DashboardViewController.swift in Sources */,
 				213BCF6922E744FB008E4F34 /* QuickOrderTableViewCell.swift in Sources */,
 				216539E422E5C995009E84B0 /* UsernamePasswordView.swift in Sources */,

@@ -43,38 +43,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if (restaurants.count == 0) {
             
+            // First, add some restaurants
+            
             let res = Restaurant(name: "Test Primaverii", id: 100)
             let res2 = Restaurant(name: "Test2 Iancu Green", id: 102)
             let res3 = Restaurant(name: "Test3 Expozitiei", id: 103)
+            
+            
+            // Now, some product categories
+            var categoryId = 99
+            let allCategories: [ProductCategory] = ["Food", "Drinks", "Disposables", "Kitchen Equipment", "Cleaning supplies", "Clothing", "Others"].map { (each) -> ProductCategory in
+                categoryId = categoryId + 1
+                return ProductCategory(id: categoryId, name: each)
+            }
+            
+            // Now some products with randomly generated consumption histories
+            var allProducts: [Product] = []
+            allProducts.append(Product(id: 100, name: "Pizza", category: allCategories[0], consumptionHistory: ConsumptionHistory(random: true), availableStock: 50, stockSuggestion: 30, price: 10))
+            allProducts.append(Product(id: 101, name: "Coke", category: allCategories[1], consumptionHistory: ConsumptionHistory(random: true), availableStock: 34, stockSuggestion: 48, price: 20))
+            allProducts.append(Product(id: 102, name: "Tiramisu", category: allCategories[0], consumptionHistory: ConsumptionHistory(random: true), availableStock: 213, stockSuggestion: 74, price: 15))
+            allProducts.append(Product(id: 103, name: "Toilet paper", category: allCategories[2], consumptionHistory: ConsumptionHistory(random: true), availableStock: 54, stockSuggestion: 88, price: 17))
+            allProducts.append(Product(id: 104, name: "Fryer pan", category: allCategories[3], consumptionHistory: ConsumptionHistory(random: true), availableStock: 72, stockSuggestion: 57, price: 23))
+            allProducts.append(Product(id: 105, name: "Tomato sauce", category: allCategories[1], consumptionHistory: ConsumptionHistory(random: true), availableStock: 80, stockSuggestion: 100, price: 30))
+            allProducts.append(Product(id: 106, name: "Napkin", category: allCategories[2], consumptionHistory: ConsumptionHistory(random: true), availableStock: 15, stockSuggestion: 231, price: 28))
+            allProducts.append(Product(id: 107, name: "Fork", category: allCategories[2], consumptionHistory: ConsumptionHistory(random: true), availableStock: 86, stockSuggestion: 123, price: 25))
+            allProducts.append(Product(id: 108, name: "Shirt", category: allCategories[5], consumptionHistory: ConsumptionHistory(random: true), availableStock: 34, stockSuggestion: 88, price: 24))
+            allProducts.append(Product(id: 108, name: "Pants", category: allCategories[5], consumptionHistory: ConsumptionHistory(random: true), availableStock: 76, stockSuggestion: 90, price: 21))
+            allProducts.append(Product(id: 109, name: "Paper Menu", category: allCategories[6], consumptionHistory: ConsumptionHistory(random: true), availableStock: 30, stockSuggestion: 45, price: 60))
+            allProducts.append(Product(id: 110, name: "Non-smoking signs", category: allCategories[6], consumptionHistory: ConsumptionHistory(random: true), availableStock: 65, stockSuggestion: 42, price: 50))
             
             try? realm.write {
                 realm.add(res)
                 realm.add(res2)
                 realm.add(res3)
+                
+                allProducts.forEach {
+                    realm.add($0)
+                }
             }
+            
         }
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
 
