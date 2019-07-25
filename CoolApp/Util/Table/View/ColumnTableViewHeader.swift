@@ -19,6 +19,11 @@ class ColumnTableViewHeader: NibView {
     
     func loadRatios(ratios: [SectionedItem]) {
         
+        UIFont.familyNames.forEach({ familyName in
+            let fontNames = UIFont.fontNames(forFamilyName: familyName)
+            print(familyName, fontNames)
+        })
+        
         // Clear the table view of any remaining labels
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
@@ -32,9 +37,9 @@ class ColumnTableViewHeader: NibView {
             
             let label = UILabel()
             label.textAlignment = .center
-            label.backgroundColor = UIColor.oracleDarkSlate
+            label.backgroundColor = UIColor(rgb: 0x942645)
             label.textColor = UIColor.white
-            label.font = UIFont.systemFont(ofSize: 22)
+            label.font = UIFont(name: "UniversLTStd-Light", size: 22.0)
             label.text = sectionText
             
             stackView.addArrangedSubview(label)

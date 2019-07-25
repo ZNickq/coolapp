@@ -24,11 +24,6 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainView.layer.borderWidth = 1.0
-        mainView.layer.borderColor = UIColor.lightGray.cgColor
-        
-        mainView.beautify()
-
         setupFirstPieChart()
         setupSecondPieChart()
         setupLineChart()
@@ -56,7 +51,7 @@ extension DashboardViewController {
         let ds = PieChartDataSet(entries: yValues, label: "Customers per hour")
         
         
-        ds.colors = ChartColorTemplates.material()
+        ds.colors = UIColor.oracleColorSet
         
         data.addDataSet(ds)
         data.setValueFormatter(DefaultValueFormatter(decimals: 0))
@@ -67,8 +62,8 @@ extension DashboardViewController {
     }
     
     func setupSecondPieChart() {
-        let dollars1 = [10, 50, 34, 26, 60]
-        let values = ["1 item", "2 items", "3 items", "4 items", "5+ items"]
+        let dollars1 = [50, 34, 26, 60]
+        let values = ["1-2 items", "3 items", "4 items", "5+ items"]
         
         let data = PieChartData()
         
@@ -83,7 +78,7 @@ extension DashboardViewController {
         let ds = PieChartDataSet(entries: yValues, label: "# of items ordered")
         
         
-        ds.colors = ChartColorTemplates.pastel()
+        ds.colors = UIColor.oracleColorSet
         
         data.addDataSet(ds)
         data.setValueFormatter(DefaultValueFormatter(decimals: 0))
@@ -112,7 +107,7 @@ extension DashboardViewController {
             sw = true
             
             
-            ds.colors = ChartColorTemplates.material()
+            ds.colors = UIColor.oracleColorSet
             
             data.addDataSet(ds)
         }
@@ -122,6 +117,10 @@ extension DashboardViewController {
         lineChartView.doubleTapToZoomEnabled = false
         lineChartView.backgroundColor = .white
         lineChartView.drawBordersEnabled = false
+        
+        lineChartView.xAxis.drawGridLinesEnabled = false
+        lineChartView.leftAxis.drawGridLinesEnabled = false
+        lineChartView.rightAxis.drawGridLinesEnabled = false
     }
     
 }
@@ -145,7 +144,8 @@ extension DashboardViewController {
             }
             
             let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Customer count \(padding)")
-            chartDataSet.colors = ChartColorTemplates.joyful()
+            
+            chartDataSet.colors = UIColor.oracleColorSet
             
             dataEntryList.append(chartDataSet)
         }
@@ -158,6 +158,7 @@ extension DashboardViewController {
         horizontalBarChartView.xAxis.drawGridLinesEnabled = false
         horizontalBarChartView.xAxis.drawLabelsEnabled = false
         horizontalBarChartView.leftAxis.drawGridLinesEnabled = false
+        horizontalBarChartView.rightAxis.drawGridLinesEnabled = false
         
     }
     
@@ -178,12 +179,12 @@ extension DashboardViewController {
             }
             
             let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Customer count \(padding)")
-            chartDataSet.colors = ChartColorTemplates.joyful()
+            chartDataSet.colors = UIColor.oracleColorSet
             
             dataEntryList.append(chartDataSet)
         }
         
-        barChartView.data = BarChartData.init(dataSets: dataEntryList)
+        barChartView.data = BarChartData(dataSets: dataEntryList)
         
         barChartView.backgroundColor = .white
         barChartView.drawBordersEnabled = false
@@ -191,6 +192,7 @@ extension DashboardViewController {
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.xAxis.drawLabelsEnabled = false
         barChartView.leftAxis.drawGridLinesEnabled = false
+        barChartView.rightAxis.drawGridLinesEnabled = false
         
     }
     

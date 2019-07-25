@@ -25,21 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupMocking()
         
-        for family: String in UIFont.familyNames
-        {
-            print(family)
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
-
-        
         return true
     }
     
     func setupMocking() {
-        let resetMocking = false
+        let resetMocking = true
         
         if (resetMocking) {
             try! FileManager.default.removeItem(at:Realm.Configuration.defaultConfiguration.fileURL!)
@@ -55,9 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // First, add some restaurants
             
-            let res = Restaurant(name: "Test Primaverii", id: 100)
-            let res2 = Restaurant(name: "Test2 Iancu Green", id: 102)
-            let res3 = Restaurant(name: "Test3 Expozitiei", id: 103)
+            let res = Restaurant(name: "Restaurant Primaverii", id: 100, address: "Bucuresti, RO")
+            let res2 = Restaurant(name: "Restaurant2 Iancu Green", id: 102, address: "Iasi, RO")
+            let res3 = Restaurant(name: "Restaurant3 Expozitiei", id: 103, address: "London, UK")
             
             
             // Now, some product categories

@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="UniversLTStd-Light.otf">
+            <string>UniversLTStd-Light</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuickOrderView" customModule="CoolApp" customModuleProvider="target">
             <connections>
@@ -25,26 +30,26 @@
                     <rect key="frame" x="20" y="24" width="386" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="UniversLTStd-Light" family="Univers LT Std" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="22/07/2019" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09p-Tp-Bfv">
                     <rect key="frame" x="20" y="68" width="386" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="UniversLTStd-Light" family="Univers LT Std" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p2-84-6kE">
                     <rect key="frame" x="151.5" y="124" width="123" height="60"/>
-                    <color key="backgroundColor" red="0.1960784314" green="0.29411764709999999" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.97254901959999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="9p2-84-6kE" secondAttribute="height" multiplier="41:20" id="BJl-EP-AGJ"/>
                         <constraint firstAttribute="width" constant="123" id="dVN-gc-JXU"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Search"/>
+                    <state key="normal" title="Search &gt;"/>
                     <connections>
                         <action selector="searchTapped:" destination="-1" eventType="touchUpInside" id="wYg-8Z-TVn"/>
                     </connections>

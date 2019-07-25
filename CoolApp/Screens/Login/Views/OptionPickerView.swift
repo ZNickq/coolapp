@@ -14,8 +14,8 @@ class OptionPickerView: LoginSubview {
     @IBOutlet weak var dashboardView: UIView!
     
     override func setupAppearance() {
-        newOrderView.layer.cornerRadius = 6.0
-        dashboardView.layer.cornerRadius = 6.0
+        newOrderView.layer.cornerRadius = 10.0
+        dashboardView.layer.cornerRadius = 10.0
     }
     
     @IBAction func createNewOrder(_ sender: Any) {

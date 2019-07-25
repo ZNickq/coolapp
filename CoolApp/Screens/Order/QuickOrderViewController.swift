@@ -8,11 +8,10 @@
 
 import UIKit
 import RealmSwift
-import SearchTextField
 
 class QuickOrderViewController: ColumnTableViewController {
 
-    @IBOutlet weak var bigRestaurantView: UIView!
+    @IBOutlet weak var bigRestaurantView: RestaurantHeaderView!
     
     var products: [Product] = []
     var quantities: [Product: Int] = [:]
@@ -22,21 +21,32 @@ class QuickOrderViewController: ColumnTableViewController {
     @IBOutlet weak var filterView: FilterView!
     @IBOutlet weak var filterHeightConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var restaurantSearchTextField: SearchTextField!
+    @IBOutlet weak var restaurantSearchTextField: RestaurantSearchTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        products = AppDelegate.shared.realm.objects(Product.self).map { $0 }
         filterView.delegate = self
-        
-        bigRestaurantView.beautify()
         
         self.columnedTableView.dataSource = self
         self.columnedTableView.register(UINib(nibName: "QuickOrderTableViewCell", bundle: nil), forCellReuseIdentifier: "aCell")
         
         columnedTableView.layer.borderColor = UIColor.lightGray.cgColor
         columnedTableView.layer.borderWidth = 1.0
+        
+        restaurantSearchTextField.restaurantDelegate = self
+        restaurantUpdated()
+        
+    }
+    
+    func restaurantUpdated() {
+        guard let restaurant = Restaurant.selectedRestaurant else {
+            return
+        }
+        bigRestaurantView.configure(restaurant: restaurant)
+        
+        products = AppDelegate.shared.realm.objects(Product.self).map { $0 }
+        columnedTableView.reloadData()
     }
     
     override func columnRatios() -> [SectionedItem] {
@@ -77,6 +87,16 @@ class QuickOrderViewController: ColumnTableViewController {
         return 0
     }
 
+}
+
+extension QuickOrderViewController: RestaurantSearchDelegate {
+    
+    func didSelect(restaurant: Restaurant) {
+        Configuration.shared.selectedRestaurantId = restaurant.id
+        restaurantUpdated()
+        
+        self.searchTapped(self)
+    }
 }
 
 // Methods for handling search / restaurant change

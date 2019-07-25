@@ -26,12 +26,12 @@
             <rect key="frame" x="0.0" y="0.0" width="426" height="218"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AJ-Go-xv6">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AJ-Go-xv6">
                     <rect key="frame" x="0.0" y="25" width="178" height="178"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEp-nr-cEX">
                             <rect key="frame" x="1" y="1" width="176" height="176"/>
-                            <color key="backgroundColor" red="0.19607843137254902" green="0.29411764705882354" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.58039215686274503" green="0.14901960784313725" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ordered List" translatesAutoresizingMaskIntoConstraints="NO" id="KQF-V3-bor">
                             <rect key="frame" x="49" y="21" width="80" height="80"/>
@@ -40,7 +40,7 @@
                                 <constraint firstAttribute="width" constant="80" id="YgN-s7-fGT"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCr-cs-NfO">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCr-cs-NfO">
                             <rect key="frame" x="11" y="122" width="156.5" height="19"/>
                             <fontDescription key="fontDescription" name="UniversLTStd-Bold" family="Univers LT Std" pointSize="19"/>
                             <color key="textColor" white="0.90509952910958902" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,12 +71,12 @@
                         <constraint firstItem="WCr-cs-NfO" firstAttribute="centerX" secondItem="1AJ-Go-xv6" secondAttribute="centerX" id="zQX-wA-mvY"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3T-JV-6sa">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3T-JV-6sa">
                     <rect key="frame" x="248" y="25" width="178" height="178"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTF-QY-ozT">
                             <rect key="frame" x="1" y="1" width="176" height="176"/>
-                            <color key="backgroundColor" red="0.1960784314" green="0.29411764709999999" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.58039215690000001" green="0.14901960780000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dashboard" translatesAutoresizingMaskIntoConstraints="NO" id="tk5-74-SsJ">
                             <rect key="frame" x="49" y="21" width="80" height="80"/>
@@ -84,7 +84,7 @@
                                 <constraint firstAttribute="width" constant="80" id="XbO-rd-hQT"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BI Dashboards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8S-70-mXI">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BI Dashboards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8S-70-mXI">
                             <rect key="frame" x="23.5" y="122" width="131" height="19"/>
                             <fontDescription key="fontDescription" name="UniversLTStd-Bold" family="Univers LT Std" pointSize="19"/>
                             <color key="textColor" white="0.90237050513698636" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

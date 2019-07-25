@@ -21,6 +21,10 @@
 		213BCF7A22E88364008E4F34 /* RestaurantSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF7922E88364008E4F34 /* RestaurantSearchTextField.swift */; };
 		213BCF7D22E8B129008E4F34 /* UniversLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF7C22E8B129008E4F34 /* UniversLTStd-Light.otf */; };
 		213BCF7F22E8B227008E4F34 /* UniversLTStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF7E22E8B227008E4F34 /* UniversLTStd-Bold.otf */; };
+		213BCF8122E9B6EC008E4F34 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF8022E9B6EC008E4F34 /* Configuration.swift */; };
+		213BCF8522E9B9F5008E4F34 /* RestaurantHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCF8422E9B9F5008E4F34 /* RestaurantHeaderView.xib */; };
+		213BCF8722E9BB3E008E4F34 /* RestaurantHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF8622E9BB3E008E4F34 /* RestaurantHeaderView.swift */; };
+		213BCF8A22E9D90C008E4F34 /* SideDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCF8922E9D90C008E4F34 /* SideDrawerViewController.swift */; };
 		216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CA22E5B41E009E84B0 /* AppDelegate.swift */; };
 		216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CC22E5B41E009E84B0 /* LoginViewController.swift */; };
 		216539D022E5B41E009E84B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216539CE22E5B41E009E84B0 /* Main.storyboard */; };
@@ -58,6 +62,10 @@
 		213BCF7922E88364008E4F34 /* RestaurantSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchTextField.swift; sourceTree = "<group>"; };
 		213BCF7C22E8B129008E4F34 /* UniversLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversLTStd-Light.otf"; sourceTree = "<group>"; };
 		213BCF7E22E8B227008E4F34 /* UniversLTStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversLTStd-Bold.otf"; sourceTree = "<group>"; };
+		213BCF8022E9B6EC008E4F34 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		213BCF8422E9B9F5008E4F34 /* RestaurantHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantHeaderView.xib; sourceTree = "<group>"; };
+		213BCF8622E9BB3E008E4F34 /* RestaurantHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantHeaderView.swift; sourceTree = "<group>"; };
+		213BCF8922E9D90C008E4F34 /* SideDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDrawerViewController.swift; sourceTree = "<group>"; };
 		216539C722E5B41E009E84B0 /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216539CA22E5B41E009E84B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216539CC22E5B41E009E84B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 		213BCF5E22E72817008E4F34 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				213BCF8822E9D8FA008E4F34 /* Drawer */,
 				213BCF5D22E72759008E4F34 /* Order */,
 				216539DC22E5C748009E84B0 /* Login */,
 				216539F422E60442009E84B0 /* Dashboard */,
@@ -135,14 +144,6 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
-		213BCF7822E88352008E4F34 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				213BCF7922E88364008E4F34 /* RestaurantSearchTextField.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
 		213BCF7B22E8B110008E4F34 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +151,24 @@
 				213BCF7C22E8B129008E4F34 /* UniversLTStd-Light.otf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		213BCF8222E9B9CF008E4F34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				213BCF7922E88364008E4F34 /* RestaurantSearchTextField.swift */,
+				213BCF8422E9B9F5008E4F34 /* RestaurantHeaderView.xib */,
+				213BCF8622E9BB3E008E4F34 /* RestaurantHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		213BCF8822E9D8FA008E4F34 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				213BCF8922E9D90C008E4F34 /* SideDrawerViewController.swift */,
+			);
+			path = Drawer;
 			sourceTree = "<group>";
 		};
 		216539BE22E5B41E009E84B0 = {
@@ -213,10 +232,11 @@
 		216539E022E5C937009E84B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				213BCF7822E88352008E4F34 /* Search */,
+				213BCF8222E9B9CF008E4F34 /* Views */,
 				216539F722E647B0009E84B0 /* Table */,
 				216539E122E5C954009E84B0 /* NibView.swift */,
 				213BCF6322E742CB008E4F34 /* UIColorExtensions.swift */,
+				213BCF8022E9B6EC008E4F34 /* Configuration.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -341,6 +361,7 @@
 				216539D222E5B420009E84B0 /* Assets.xcassets in Resources */,
 				213BCF6D22E7A220008E4F34 /* FilterView.xib in Resources */,
 				216539D022E5B41E009E84B0 /* Main.storyboard in Resources */,
+				213BCF8522E9B9F5008E4F34 /* RestaurantHeaderView.xib in Resources */,
 				216539DF22E5C777009E84B0 /* UsernamePasswordView.xib in Resources */,
 				213BCF7F22E8B227008E4F34 /* UniversLTStd-Bold.otf in Resources */,
 				216539EA22E5D201009E84B0 /* OptionPickerView.xib in Resources */,
@@ -401,17 +422,20 @@
 				213BCF6422E742CB008E4F34 /* UIColorExtensions.swift in Sources */,
 				213BCF7722E873EF008E4F34 /* SideMenuNavigationController.swift in Sources */,
 				216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */,
+				213BCF8A22E9D90C008E4F34 /* SideDrawerViewController.swift in Sources */,
 				216539E622E5CB07009E84B0 /* LoginViewDelegate.swift in Sources */,
 				216539EE22E5DD7E009E84B0 /* QuickOrderView.swift in Sources */,
 				216539EC22E5D7FD009E84B0 /* OptionPickerView.swift in Sources */,
 				213BCF6222E73C27008E4F34 /* ColumnTableViewHeader.swift in Sources */,
 				216539E822E5CC25009E84B0 /* LoginSubview.swift in Sources */,
+				213BCF8122E9B6EC008E4F34 /* Configuration.swift in Sources */,
 				216539E222E5C954009E84B0 /* NibView.swift in Sources */,
 				213BCF7522E7A5FF008E4F34 /* FilterTableViewCell.swift in Sources */,
 				213BCF6B22E788F6008E4F34 /* Product.swift in Sources */,
 				213BCF7122E7A505008E4F34 /* FilterView.swift in Sources */,
 				216539F622E60458009E84B0 /* DashboardViewController.swift in Sources */,
 				213BCF7A22E88364008E4F34 /* RestaurantSearchTextField.swift in Sources */,
+				213BCF8722E9BB3E008E4F34 /* RestaurantHeaderView.swift in Sources */,
 				213BCF6922E744FB008E4F34 /* QuickOrderTableViewCell.swift in Sources */,
 				216539E422E5C995009E84B0 /* UsernamePasswordView.swift in Sources */,
 				213BCF6022E72849008E4F34 /* QuickOrderViewController.swift in Sources */,

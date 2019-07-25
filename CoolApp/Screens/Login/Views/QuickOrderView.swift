@@ -15,12 +15,17 @@ class QuickOrderView: LoginSubview {
     
     private let datePicker = UIDatePicker()
     
+    private var selectedRestaurant: Restaurant?
+    
     override func setupAppearance() {
         setupDatePicker()
     
         let item = restaurantSearchTextField.inputAssistantItem;
         item.leadingBarButtonGroups = [];
         item.trailingBarButtonGroups = [];
+        
+        restaurantSearchTextField.restaurantDelegate = self
+        dateDoneTapped()
     }
     
     @objc func dateDoneTapped() {
@@ -53,7 +58,27 @@ class QuickOrderView: LoginSubview {
     }
     
     @IBAction func searchTapped(_ sender: Any) {
+        
+        guard let restaurant = selectedRestaurant else {
+            restaurantSearchTextField.layer.borderColor = UIColor.red.cgColor
+            restaurantSearchTextField.layer.borderWidth = 1.0
+            return
+        }
+        
+        Configuration.shared.selectedRestaurantId = restaurant.id
+        
         delegate?.nextTapped(option: .search)
+    }
+    
+    
+}
+
+extension QuickOrderView: RestaurantSearchDelegate {
+    
+    func didSelect(restaurant: Restaurant) {
+        self.view.endEditing(true)
+        
+        self.selectedRestaurant = restaurant
     }
     
     
