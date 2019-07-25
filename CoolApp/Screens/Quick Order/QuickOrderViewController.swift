@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SideMenu
 
 class QuickOrderViewController: ColumnTableViewController {
 
@@ -170,3 +171,10 @@ extension QuickOrderViewController: QuickOrderTableViewCellDelegate {
     }
     
 }
+
+//extension QuickOrderViewController: UISideMenuNavigationControllerDelegate {
+//
+//    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+//        self.view.endEditing(true)
+//    }
+//}

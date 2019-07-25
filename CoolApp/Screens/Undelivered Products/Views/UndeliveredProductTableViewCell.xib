@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="UniversLTStd-Light.otf">
+            <string>UniversLTStd-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="54U-uU-vrQ" customClass="UndeliveredProductTableViewCell" customModule="CoolApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1Az-ac-yur">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="145" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1k-w1-HFM">
+                            <rect key="frame" x="0.0" y="0.0" width="133" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="UniversLTStd-Light" family="Univers LT Std" pointSize="20"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4534453445RT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="par-QX-CNq">
+                            <rect key="frame" x="135" y="0.0" width="225.5" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="UniversLTStd-Light" family="Univers LT Std" pointSize="20"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardboard Boxes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qT3-Ab-Y31">
+                            <rect key="frame" x="362.5" y="0.0" width="379" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="UniversLTStd-Light" family="Univers LT Std" pointSize="20"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$357" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tr-9E-kWy">
+                            <rect key="frame" x="743.5" y="0.0" width="133" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="UniversLTStd-Light" family="Univers LT Std" pointSize="20"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvC-fL-Ks4">
+                            <rect key="frame" x="878.5" y="0.0" width="145.5" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXn-s5-dQx">
+                                    <rect key="frame" x="0.0" y="0.0" width="145.5" height="50"/>
+                                    <connections>
+                                        <action selector="detailsTapped:" destination="54U-uU-vrQ" eventType="touchUpInside" id="oep-T4-m2B"/>
+                                    </connections>
+                                </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-M7-mBf">
+                                    <rect key="frame" x="60" y="12.5" width="25" height="25"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="chZ-M7-mBf" secondAttribute="height" multiplier="1:1" id="9lf-cd-hsQ"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="chZ-M7-mBf" firstAttribute="height" secondItem="kvC-fL-Ks4" secondAttribute="height" multiplier="1/2" id="1g0-j2-fxT"/>
+                                <constraint firstItem="uXn-s5-dQx" firstAttribute="centerY" secondItem="kvC-fL-Ks4" secondAttribute="centerY" id="9Cm-6R-47l"/>
+                                <constraint firstItem="chZ-M7-mBf" firstAttribute="centerY" secondItem="kvC-fL-Ks4" secondAttribute="centerY" id="Sq7-dW-F4v"/>
+                                <constraint firstItem="uXn-s5-dQx" firstAttribute="height" secondItem="kvC-fL-Ks4" secondAttribute="height" id="ZG1-6F-4De"/>
+                                <constraint firstItem="uXn-s5-dQx" firstAttribute="centerX" secondItem="kvC-fL-Ks4" secondAttribute="centerX" id="bdT-iZ-V0o"/>
+                                <constraint firstItem="uXn-s5-dQx" firstAttribute="width" secondItem="kvC-fL-Ks4" secondAttribute="width" id="cmj-AV-mzw"/>
+                                <constraint firstItem="chZ-M7-mBf" firstAttribute="centerX" secondItem="kvC-fL-Ks4" secondAttribute="centerX" id="kze-bX-OVA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="par-QX-CNq" firstAttribute="width" secondItem="1Az-ac-yur" secondAttribute="width" multiplier="0.22" id="3nd-HA-yKq"/>
+                        <constraint firstItem="qT3-Ab-Y31" firstAttribute="width" secondItem="1Az-ac-yur" secondAttribute="width" multiplier="0.37" id="9N9-Uf-pqi"/>
+                        <constraint firstItem="Z1k-w1-HFM" firstAttribute="width" secondItem="1Az-ac-yur" secondAttribute="width" multiplier="0.13" id="Tfj-Cy-nkW"/>
+                        <constraint firstItem="2tr-9E-kWy" firstAttribute="width" secondItem="1Az-ac-yur" secondAttribute="width" multiplier="0.13" id="bzV-T5-nLF"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="1Az-ac-yur" firstAttribute="width" secondItem="54U-uU-vrQ" secondAttribute="width" id="7ng-xc-Yw5"/>
+                <constraint firstItem="1Az-ac-yur" firstAttribute="centerX" secondItem="54U-uU-vrQ" secondAttribute="centerX" id="ZxM-ji-lBI"/>
+                <constraint firstItem="1Az-ac-yur" firstAttribute="centerY" secondItem="54U-uU-vrQ" secondAttribute="centerY" id="b59-m3-R3e"/>
+                <constraint firstItem="1Az-ac-yur" firstAttribute="height" secondItem="54U-uU-vrQ" secondAttribute="height" id="ua9-rc-SZh"/>
+            </constraints>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="F2U-Pt-KYh"/>
+            <connections>
+                <outlet property="orderNumberLabel" destination="par-QX-CNq" id="nfV-Jc-RTB"/>
+                <outlet property="productIDLabel" destination="Z1k-w1-HFM" id="trr-b5-E3D"/>
+                <outlet property="productNameLabel" destination="qT3-Ab-Y31" id="tnw-dB-sED"/>
+                <outlet property="productPriceLabel" destination="2tr-9E-kWy" id="d6f-nt-dLB"/>
+            </connections>
+            <point key="canvasLocation" x="102.89855072463769" y="-235.04464285714283"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Right Arrow" width="42.666667938232422" height="42.666667938232422"/>
+    </resources>
+</document>
