@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         AppDelegate.shared = self
         
         setupMocking()
@@ -29,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setupMocking() {
-        let resetMocking = true
+        let resetMocking = false
         
         if (resetMocking) {
             try? FileManager.default.removeItem(at:Realm.Configuration.defaultConfiguration.fileURL!)

@@ -20,11 +20,6 @@ class Restaurant: RealmSwift.Object {
     @objc dynamic var name: String = ""
     @objc dynamic var address: String = ""
     
-//    init(id: Int, name: String) {
-//        self.name = name;
-//        self.id = id;
-//    }
-//
     convenience init(name: String, id: Int, address: String) {
         self.init()
         

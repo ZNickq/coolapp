@@ -9,9 +9,7 @@
 import UIKit
 
 protocol UndeliveredProductTableViewCellDelegate: class{
-    
     func detailsTapped(cell: UndeliveredProductTableViewCell)
-    
 }
 
 class UndeliveredProductTableViewCell: UITableViewCell {
@@ -20,16 +18,8 @@ class UndeliveredProductTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var productIDLabel: UILabel!
     @IBOutlet private weak var orderNumberLabel: UILabel!
-    @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var productPriceLabel: UILabel!
-    
-    private static var numberFormatter: NumberFormatter = {
-        let nf = NumberFormatter()
-        nf.minimumFractionDigits = 2
-        nf.maximumFractionDigits = 2
-        
-        return nf
-    }()
+    @IBOutlet private weak var productNameLabel: UILabel!
+    @IBOutlet private weak var productPriceLabel: UILabel!
     
     func configure(orderedProduct: OrderedProduct) {
         let product = orderedProduct
@@ -39,7 +29,7 @@ class UndeliveredProductTableViewCell: UITableViewCell {
         productNameLabel.text = product.product?.name ?? "N/A"
         
         let numberPrice = NSNumber(value: product.price)
-        productPriceLabel.text = "$\(UndeliveredProductTableViewCell.numberFormatter.string(from: numberPrice) ?? "N/A")"
+        productPriceLabel.text = "$\(Formatters.currency.string(from: numberPrice) ?? "N/A")"
     }
     
     @IBAction func detailsTapped(_ sender: Any) {

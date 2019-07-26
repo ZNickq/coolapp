@@ -22,7 +22,6 @@ class ColumnTableViewController: UIViewController, UITableViewDelegate {
         fatalError("This method must be implemented in a superclass!")
     }
     
-    
     // UITableViewDelegate methods
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -41,6 +41,7 @@
 		2150C74322EB1E93007BE5CA /* VendorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C74222EB1E93007BE5CA /* VendorListViewController.swift */; };
 		2150C74622EB1EFC007BE5CA /* VendorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2150C74522EB1EFC007BE5CA /* VendorTableViewCell.xib */; };
 		2150C74822EB1F31007BE5CA /* VendorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C74722EB1F31007BE5CA /* VendorTableViewCell.swift */; };
+		2150C74A22EB3190007BE5CA /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C74922EB3190007BE5CA /* Formatters.swift */; };
 		216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CA22E5B41E009E84B0 /* AppDelegate.swift */; };
 		216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CC22E5B41E009E84B0 /* LoginViewController.swift */; };
 		216539D022E5B41E009E84B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216539CE22E5B41E009E84B0 /* Main.storyboard */; };
@@ -49,7 +50,6 @@
 		216539DF22E5C777009E84B0 /* UsernamePasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216539DE22E5C777009E84B0 /* UsernamePasswordView.xib */; };
 		216539E222E5C954009E84B0 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539E122E5C954009E84B0 /* NibView.swift */; };
 		216539E422E5C995009E84B0 /* UsernamePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539E322E5C995009E84B0 /* UsernamePasswordView.swift */; };
-		216539E622E5CB07009E84B0 /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539E522E5CB07009E84B0 /* LoginViewDelegate.swift */; };
 		216539E822E5CC25009E84B0 /* LoginSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539E722E5CC25009E84B0 /* LoginSubview.swift */; };
 		216539EA22E5D201009E84B0 /* OptionPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216539E922E5D201009E84B0 /* OptionPickerView.xib */; };
 		216539EC22E5D7FD009E84B0 /* OptionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539EB22E5D7FD009E84B0 /* OptionPickerView.swift */; };
@@ -98,6 +98,7 @@
 		2150C74222EB1E93007BE5CA /* VendorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorListViewController.swift; sourceTree = "<group>"; };
 		2150C74522EB1EFC007BE5CA /* VendorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VendorTableViewCell.xib; sourceTree = "<group>"; };
 		2150C74722EB1F31007BE5CA /* VendorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorTableViewCell.swift; sourceTree = "<group>"; };
+		2150C74922EB3190007BE5CA /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		216539C722E5B41E009E84B0 /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216539CA22E5B41E009E84B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216539CC22E5B41E009E84B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 		216539DE22E5C777009E84B0 /* UsernamePasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsernamePasswordView.xib; sourceTree = "<group>"; };
 		216539E122E5C954009E84B0 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		216539E322E5C995009E84B0 /* UsernamePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernamePasswordView.swift; sourceTree = "<group>"; };
-		216539E522E5CB07009E84B0 /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
 		216539E722E5CC25009E84B0 /* LoginSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSubview.swift; sourceTree = "<group>"; };
 		216539E922E5D201009E84B0 /* OptionPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionPickerView.xib; sourceTree = "<group>"; };
 		216539EB22E5D7FD009E84B0 /* OptionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionPickerView.swift; sourceTree = "<group>"; };
@@ -328,7 +328,6 @@
 			children = (
 				216539CC22E5B41E009E84B0 /* LoginViewController.swift */,
 				216539DD22E5C74E009E84B0 /* Views */,
-				216539E522E5CB07009E84B0 /* LoginViewDelegate.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -355,6 +354,7 @@
 				216539F722E647B0009E84B0 /* Table */,
 				216539E122E5C954009E84B0 /* NibView.swift */,
 				213BCF8022E9B6EC008E4F34 /* Configuration.swift */,
+				2150C74922EB3190007BE5CA /* Formatters.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -553,9 +553,9 @@
 				2150C71F22E9EFAC007BE5CA /* UndeliveredProductsViewController.swift in Sources */,
 				213BCF8A22E9D90C008E4F34 /* SideDrawerViewController.swift in Sources */,
 				2150C74322EB1E93007BE5CA /* VendorListViewController.swift in Sources */,
-				216539E622E5CB07009E84B0 /* LoginViewDelegate.swift in Sources */,
 				216539EE22E5DD7E009E84B0 /* QuickOrderView.swift in Sources */,
 				216539EC22E5D7FD009E84B0 /* OptionPickerView.swift in Sources */,
+				2150C74A22EB3190007BE5CA /* Formatters.swift in Sources */,
 				2150C72F22EA052F007BE5CA /* OrderHistoryTableViewCell.swift in Sources */,
 				2150C74822EB1F31007BE5CA /* VendorTableViewCell.swift in Sources */,
 				2150C72822E9F3EB007BE5CA /* Order.swift in Sources */,

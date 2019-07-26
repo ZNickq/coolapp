@@ -28,7 +28,6 @@ extension UIColor {
     
     static let oracleRed = UIColor(rgb: 0xf80000)
     static let oracleDarkSlate = UIColor(rgb: 0x324b5c)
-    
     static let oracleColorSet = [UIColor(rgb: 0xf29111), UIColor(rgb: 0x00758f), UIColor(rgb: 0x3a913f), UIColor(rgb: 0x942645)]
     
 }

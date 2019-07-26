@@ -9,9 +9,7 @@
 import UIKit
 
 protocol VendorTableViewCellDelegate: class{
-    
     func detailsTapped(cell: VendorTableViewCell)
-    
 }
 
 class VendorTableViewCell: UITableViewCell {

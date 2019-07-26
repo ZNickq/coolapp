@@ -90,7 +90,6 @@ extension VendorListViewController: UITableViewDataSource {
 
 extension VendorListViewController: VendorTableViewCellDelegate {
     
-    
     func detailsTapped(cell: VendorTableViewCell) {
         guard let indexPath = columnedTableView.indexPath(for: cell) else {
             return

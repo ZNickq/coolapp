@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet private weak var mainView: UIView!
+    @IBOutlet private weak var containerView: UIView!
     
     private var state: LoginFlowState = .none {
         didSet {
@@ -81,7 +81,6 @@ class LoginViewController: UIViewController {
             
         }
         
-        
     }
     
 }
@@ -107,26 +106,16 @@ extension LoginViewController: LoginViewDelegate {
 extension LoginViewController {
     
     func setupAppearance() {
-        mainView.beautify()
-    }
-    
-}
-
-
-extension UIView {
-    
-    func beautify() {
-        //layer.borderColor = UIColor.lightGray.cgColor
-        //layer.borderWidth = 1.0
-        clipsToBounds = true
+        mainView.clipsToBounds = true
         
-        layer.shadowPath =
-            UIBezierPath(roundedRect: bounds,
-                         cornerRadius: layer.cornerRadius).cgPath
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowOffset = CGSize(width: 4, height: 4)
-        layer.shadowRadius = 1
-        layer.masksToBounds = false
+        mainView.layer.shadowPath =
+            UIBezierPath(roundedRect: mainView.bounds,
+                         cornerRadius: mainView.layer.cornerRadius).cgPath
+        mainView.layer.shadowColor = UIColor.black.cgColor
+        mainView.layer.shadowOpacity = 0.2
+        mainView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        mainView.layer.shadowRadius = 1
+        mainView.layer.masksToBounds = false
     }
+    
 }

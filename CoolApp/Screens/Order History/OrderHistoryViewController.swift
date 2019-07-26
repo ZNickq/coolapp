@@ -18,9 +18,8 @@ class OrderHistoryViewController: ColumnTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        self.columnedTableView.dataSource = self
-        self.columnedTableView.register(UINib(nibName: "OrderHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "aCell")
+        columnedTableView.dataSource = self
+        columnedTableView.register(UINib(nibName: "OrderHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "aCell")
         
         columnedTableView.layer.borderColor = UIColor.lightGray.cgColor
         columnedTableView.layer.borderWidth = 1.0
@@ -40,7 +39,6 @@ class OrderHistoryViewController: ColumnTableViewController {
     }
     
     override func columnRatios() -> [SectionedItem] {
-        
         let first = SectionedItem(ratio: 0.22, label: "Date")
         let second = SectionedItem(ratio: 0.4, label: "Order no.")
         let third = SectionedItem(ratio: 0.2, label: "Order value")
@@ -86,7 +84,6 @@ extension OrderHistoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "aCell") as? OrderHistoryTableViewCell else {
             return UITableViewCell()
         }

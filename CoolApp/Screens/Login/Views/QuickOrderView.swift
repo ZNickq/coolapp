@@ -29,9 +29,7 @@ class QuickOrderView: LoginSubview {
     }
     
     @objc func dateDoneTapped() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        restaurantDate.text = formatter.string(from: datePicker.date)
+        restaurantDate.text = Formatters.date.string(from: datePicker.date)
         
         endEditing(true)
     }

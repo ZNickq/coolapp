@@ -8,8 +8,14 @@
 
 import UIKit
 
+enum LoginViewOption {
+    case login, quickOrder, dashboards, search
+}
+
+protocol LoginViewDelegate: class{
+    func nextTapped(option: LoginViewOption)
+}
+
 class LoginSubview: NibView {
-
     weak var delegate: LoginViewDelegate?
-
 }

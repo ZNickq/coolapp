@@ -10,28 +10,17 @@ import UIKit
 
 class OrderDetailsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var productPriceLabel: UILabel!
-    @IBOutlet weak var productUnitPriceLabel: UILabel!
-    
-    private static var numberFormatter: NumberFormatter = {
-        let nf = NumberFormatter()
-        nf.minimumFractionDigits = 2
-        nf.maximumFractionDigits = 2
-        
-        return nf
-    }()
+    @IBOutlet private weak var productNameLabel: UILabel!
+    @IBOutlet private weak var productPriceLabel: UILabel!
+    @IBOutlet private weak var productUnitPriceLabel: UILabel!
     
     func configure(orderedProduct: OrderedProduct) {
         let product = orderedProduct
+        let numberPrice = NSNumber(value: product.price)
+        let numberUnitPrice = NSNumber(value: product.product?.price ?? 0)
         
         productNameLabel.text = orderedProduct.product?.name ?? "N/A"
-       
-        
-        let numberPrice = NSNumber(value: product.price)
-        productPriceLabel.text = "$\(OrderDetailsTableViewCell.numberFormatter.string(from: numberPrice) ?? "N/A")"
-        
-        let numberUnitPrice = NSNumber(value: product.product?.price ?? 0)
-        productUnitPriceLabel.text = "$\(OrderDetailsTableViewCell.numberFormatter.string(from: numberUnitPrice) ?? "N/A")"
+        productPriceLabel.text = "$\(Formatters.currency.string(from: numberPrice) ?? "N/A")"
+        productUnitPriceLabel.text = "$\(Formatters.currency.string(from: numberUnitPrice) ?? "N/A")"
     }
 }

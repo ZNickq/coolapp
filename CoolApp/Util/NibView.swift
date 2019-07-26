@@ -12,7 +12,6 @@ class NibView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // Setup view from .xib file
         xibSetup()
         setupAppearance()
     }
@@ -20,7 +19,6 @@ class NibView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        // Setup view from .xib file
         xibSetup()
         setupAppearance()
     }
@@ -33,9 +31,9 @@ private extension NibView {
     func xibSetup() {
         backgroundColor = UIColor.clear
         view = loadNib()
-        // use bounds not frame or it'll be offset
+        
         view.frame = bounds
-        // Adding custom subview on top of our view
+        
         addSubview(view)
         
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +50,7 @@ private extension NibView {
 
 extension UIView {
     /** Loads instance from nib with the same name. */
-    func loadNib() -> UIView {
+    fileprivate func loadNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nibName = type(of: self).description().components(separatedBy: ".").last!
         let nib = UINib(nibName: nibName, bundle: bundle)

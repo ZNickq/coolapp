@@ -9,24 +9,21 @@
 import UIKit
 
 protocol QuickOrderTableViewCellDelegate: class{
-    
     func quantityUpdated(cell: QuickOrderTableViewCell, quantity: Int)
-    
 }
 
 class QuickOrderTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet private weak var stackView: UIStackView!
+
+    @IBOutlet private weak var orderAmountLabel: UILabel!
+    @IBOutlet private weak var productNameLabel: UILabel!
+    @IBOutlet private weak var consumptionLabel: UILabel!
+    @IBOutlet private weak var onHandLabel: UILabel!
+    @IBOutlet private weak var suggestedOrderLabel: UILabel!
     
-    @IBOutlet weak var orderAmountLabel: UILabel!
-    
-    @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var consumptionLabel: UILabel!
-    @IBOutlet weak var onHandLabel: UILabel!
-    @IBOutlet weak var suggestedOrderLabel: UILabel!
-    
-    @IBOutlet weak var reorderSwitch: UISwitch!
-    @IBOutlet weak var orderStepper: UIStepper!
+    @IBOutlet private weak var reorderSwitch: UISwitch!
+    @IBOutlet private weak var orderStepper: UIStepper!
     
     weak var delegate: QuickOrderTableViewCellDelegate?
     
@@ -43,17 +40,11 @@ class QuickOrderTableViewCell: UITableViewCell {
         updateSwitch(animated: false)
     }
     
-    @IBAction func stepperChanged(_ sender: UIStepper) {
+    @IBAction private func stepperChanged(_ sender: UIStepper) {
         orderAmountLabel.text = "\(Int(sender.value))"
         updateSwitch()
     }
-    
-    private func updateSwitch(animated: Bool = true) {
-        reorderSwitch.setOn(orderStepper.value > 0, animated: animated)
-        
-        delegate?.quantityUpdated(cell: self, quantity: Int(orderStepper.value))
-    }
-    @IBAction func switchTapped(_ sender: UISwitch) {
+    @IBAction private func switchTapped(_ sender: UISwitch) {
         if (!sender.isOn) {
             orderStepper.value = 0.0
             stepperChanged(orderStepper)
@@ -63,6 +54,12 @@ class QuickOrderTableViewCell: UITableViewCell {
                 stepperChanged(orderStepper)
             }
         }
+    }
+    
+    private func updateSwitch(animated: Bool = true) {
+        reorderSwitch.setOn(orderStepper.value > 0, animated: animated)
+        
+        delegate?.quantityUpdated(cell: self, quantity: Int(orderStepper.value))
     }
     
 }

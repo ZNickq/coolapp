@@ -10,9 +10,7 @@ import UIKit
 import SearchTextField
 
 protocol RestaurantSearchDelegate: class{
-    
     func didSelect(restaurant: Restaurant)
-    
 }
 
 class RestaurantSearchTextField: SearchTextField {
@@ -51,7 +49,6 @@ class RestaurantSearchTextField: SearchTextField {
             }
         }
         
-        //(_ filteredResults: [SearchTextFieldItem], _ index: Int) -> Void
         itemSelectionHandler = { results, selectedIndex in
             guard let selectedId = Int(results[selectedIndex].subtitle ?? "") else {
                 return

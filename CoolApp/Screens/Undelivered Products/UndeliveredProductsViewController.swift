@@ -11,16 +11,15 @@ import RealmSwift
 
 class UndeliveredProductsViewController: ColumnTableViewController {
     
-    @IBOutlet weak var bigRestaurantView: RestaurantHeaderView!
+    @IBOutlet private weak var bigRestaurantView: RestaurantHeaderView!
     
     var products: Results<OrderedProduct>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        self.columnedTableView.dataSource = self
-        self.columnedTableView.register(UINib(nibName: "UndeliveredProductTableViewCell", bundle: nil), forCellReuseIdentifier: "aCell")
+        columnedTableView.dataSource = self
+        columnedTableView.register(UINib(nibName: "UndeliveredProductTableViewCell", bundle: nil), forCellReuseIdentifier: "aCell")
         
         columnedTableView.layer.borderColor = UIColor.lightGray.cgColor
         columnedTableView.layer.borderWidth = 1.0
@@ -74,7 +73,6 @@ extension UndeliveredProductsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "aCell") as? UndeliveredProductTableViewCell else {
             return UITableViewCell()
         }
@@ -91,7 +89,6 @@ extension UndeliveredProductsViewController: UITableViewDataSource {
 }
 
 extension UndeliveredProductsViewController: UndeliveredProductTableViewCellDelegate {
-    
     
     func detailsTapped(cell: UndeliveredProductTableViewCell) {
         guard let indexPath = columnedTableView.indexPath(for: cell) else {

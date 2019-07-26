@@ -16,8 +16,8 @@ class QuickOrderViewController: ColumnTableViewController {
     
     var vendorFilter: Vendor? = nil // Only used when being accessed from the vendor list
     
-    var products: [Product] = []
-    var quantities: [Product: Int] = [:]
+    var products: Results<Product>? = nil
+    var quantities: [Int: Int] = [:]
     
     var consumptionPeriod = FilterView.ConsumptionPeriod.four
     
@@ -54,7 +54,7 @@ class QuickOrderViewController: ColumnTableViewController {
         }
         bigRestaurantView.configure(restaurant: restaurant)
         
-        products = queryProducts().map { $0 }
+        products = queryProducts()
         columnedTableView.reloadData()
     }
     
@@ -91,7 +91,7 @@ class QuickOrderViewController: ColumnTableViewController {
             return
         }
         let order = Order(id: newId + 1, code: String.randomHash(), date: Date())
-        let productQuants: [Product: Int] = quantities.filter { $0.value > 0 }
+        let productQuants: [Int: Int] = quantities.filter { $0.value > 0 }
         
         guard !productQuants.isEmpty else {
             self.showAlert(alertText: "Alert", alertMessage: "You can't send an empty order!")
@@ -102,9 +102,12 @@ class QuickOrderViewController: ColumnTableViewController {
             return
         }
         
-        let orderedProducts = productQuants.map { (key, value) -> OrderedProduct in
+        let orderedProducts = productQuants.compactMap { (key, value) -> OrderedProduct? in
             currentOrderedProductId += 1
-            return OrderedProduct(id: currentOrderedProductId, order: order, product: key, quantity: value, delivered: false)
+            guard let product = AppDelegate.shared.realm.objects(Product.self).filter("id == %@", key).first else {
+                return nil
+            }
+            return OrderedProduct(id: currentOrderedProductId, order: order, product: product, quantity: value, delivered: false)
         }
         
         do {
@@ -129,10 +132,10 @@ class QuickOrderViewController: ColumnTableViewController {
     }
     
     func quantity(for product: Product) -> Int {
-        if let q = quantities[product] {
+        if let q = quantities[product.id] {
             return q
         }
-        quantities[product] = 0
+        quantities[product.id] = 0
         return 0
     }
     
@@ -185,7 +188,8 @@ extension QuickOrderViewController: FilterViewDelegate {
     }
     
     func filterViewSwitchesChanged(newStates: [Int : Bool]) {
-        products = queryProducts().filter { newStates[$0.category?.id ?? -1] ?? false == true }
+        let validProducts = Array(newStates.filter { $1 }.keys)
+        products = queryProducts().filter("category.id IN %@", validProducts)
         
         columnedTableView.reloadData()
     }
@@ -196,7 +200,7 @@ extension QuickOrderViewController: FilterViewDelegate {
 extension QuickOrderViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return products?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -204,9 +208,11 @@ extension QuickOrderViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "aCell") as? QuickOrderTableViewCell else {
             return UITableViewCell()
         }
-        let product = products[indexPath.row]
+        guard let product = products?[indexPath.row] else {
+            return cell
+        }
         
-        cell.configure(product: products[indexPath.row], consumptionPeriod: consumptionPeriod, currentQuantity: quantity(for: product))
+        cell.configure(product: product, consumptionPeriod: consumptionPeriod, currentQuantity: quantity(for: product))
         cell.delegate = self
         
         return cell;
@@ -221,9 +227,11 @@ extension QuickOrderViewController: QuickOrderTableViewCellDelegate {
         guard let indexPath = columnedTableView.indexPath(for: cell) else {
             return
         }
-        let product = products[indexPath.row]
+        guard let product = products?[indexPath.row] else {
+            return
+        }
         
-        quantities[product] = quantity
+        quantities[product.id] = quantity
     }
     
 }

@@ -15,10 +15,7 @@ class SideDrawerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        menuButtons.forEach {
-            $0.layer.cornerRadius = 8.0
-        }
+        menuButtons.forEach { $0.layer.cornerRadius = 8.0 }
     }
-    
 
 }

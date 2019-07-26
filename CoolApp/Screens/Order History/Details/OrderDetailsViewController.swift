@@ -33,15 +33,18 @@ class OrderDetailsViewController: ColumnTableViewController {
         guard let restaurant = Restaurant.selectedRestaurant else {
             return
         }
+        guard let order = selectedOrder else {
+            return
+        }
+        
+        self.title = "Order Number \(order.code)"
+        
+        products = AppDelegate.shared.realm.objects(OrderedProduct.self).filter("order == %@", order)
+        
+        totalPriceButton.setTitle("Total: $\(order.price)", for: .normal)
+        
         bigRestaurantView.configure(restaurant: restaurant)
         
-        if let order = selectedOrder {
-            
-            self.title = "Order Number \(order.code)"
-            
-            products = AppDelegate.shared.realm.objects(OrderedProduct.self).filter("order == %@", order)
-            totalPriceButton.setTitle("Total: $\(order.price)", for: .normal)
-        }
         columnedTableView.reloadData()
     }
     

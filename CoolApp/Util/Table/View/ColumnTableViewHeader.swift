@@ -12,13 +12,7 @@ class ColumnTableViewHeader: NibView {
 
     @IBOutlet weak var stackView: UIStackView!
     
-
-    override func setupAppearance() {
-        
-    }
-    
     func loadRatios(ratios: [SectionedItem]) {
-        
         // Clear the table view of any remaining labels
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         

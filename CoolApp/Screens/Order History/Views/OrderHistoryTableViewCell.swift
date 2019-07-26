@@ -9,9 +9,7 @@
 import UIKit
 
 protocol OrderHistoryTableViewCellDelegate: class{
-    
     func detailsTapped(cell: OrderHistoryTableViewCell)
-    
 }
 
 class OrderHistoryTableViewCell: UITableViewCell {
@@ -22,27 +20,11 @@ class OrderHistoryTableViewCell: UITableViewCell {
     @IBOutlet private weak var orderNumberLabel: UILabel!
     @IBOutlet private weak var orderPriceLabel: UILabel!
     
-    private static var numberFormatter: NumberFormatter = {
-        let nf = NumberFormatter()
-        nf.minimumFractionDigits = 2
-        nf.maximumFractionDigits = 2
-        
-        return nf
-    }()
-    
-    private static var dateFormatter: DateFormatter = {
-        let nf = DateFormatter()
-        nf.dateFormat = "d MMMM yyyy"
-        return nf
-    }()
-    
     func configure(order: Order) {
-    
-        orderDateLabel.text = OrderHistoryTableViewCell.dateFormatter.string(from: order.date)
+        orderDateLabel.text = Formatters.date.string(from: order.date)
         orderNumberLabel.text = order.code
         
-        let numberPrice = NSNumber(value: order.price)
-        orderPriceLabel.text = "$\(OrderHistoryTableViewCell.numberFormatter.string(from: numberPrice) ?? "N/A")"
+        orderPriceLabel.text = "$\(Formatters.currency.string(from: NSNumber(value: order.price)) ?? "N/A")"
     }
     
     @IBAction func detailsTapped(_ sender: Any) {

@@ -10,10 +10,8 @@ import UIKit
 import RealmSwift
 
 protocol FilterViewDelegate: class{
-    
     func filterViewConsumptionPeriodChanged(period: FilterView.ConsumptionPeriod)
     func filterViewSwitchesChanged(newStates: [Int: Bool])
-    
 }
 
 class FilterView: NibView {
@@ -31,7 +29,6 @@ class FilterView: NibView {
     private var filterState: [Int: Bool] = [:]
     
     override func setupAppearance() {
-        tableView.delegate = self
         tableView.dataSource = self
         
         self.tableView.register(UINib(nibName: "FilterTableViewCell", bundle: nil), forCellReuseIdentifier: "aCell")
@@ -118,10 +115,5 @@ extension FilterView: UITableViewDataSource {
         
         return cell
     }
-    
-    
-}
-
-extension FilterView: UITableViewDelegate {
     
 }
