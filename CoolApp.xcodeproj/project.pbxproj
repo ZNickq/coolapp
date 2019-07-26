@@ -29,6 +29,12 @@
 		2150C72422E9F20C007BE5CA /* UndeliveredProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2150C72322E9F20C007BE5CA /* UndeliveredProductTableViewCell.xib */; };
 		2150C72622E9F22C007BE5CA /* UndeliveredProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C72522E9F22C007BE5CA /* UndeliveredProductTableViewCell.swift */; };
 		2150C72822E9F3EB007BE5CA /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C72722E9F3EB007BE5CA /* Order.swift */; };
+		2150C72C22EA04DB007BE5CA /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C72B22EA04DB007BE5CA /* OrderHistoryViewController.swift */; };
+		2150C72F22EA052F007BE5CA /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C72E22EA052F007BE5CA /* OrderHistoryTableViewCell.swift */; };
+		2150C73122EA057F007BE5CA /* OrderHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2150C73022EA057F007BE5CA /* OrderHistoryTableViewCell.xib */; };
+		2150C73422EA0D84007BE5CA /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C73322EA0D84007BE5CA /* OrderDetailsViewController.swift */; };
+		2150C73722EA0DE4007BE5CA /* OrderDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2150C73622EA0DE4007BE5CA /* OrderDetailsTableViewCell.xib */; };
+		2150C73922EA0F3F007BE5CA /* OrderDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C73822EA0F3F007BE5CA /* OrderDetailsTableViewCell.swift */; };
 		216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CA22E5B41E009E84B0 /* AppDelegate.swift */; };
 		216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CC22E5B41E009E84B0 /* LoginViewController.swift */; };
 		216539D022E5B41E009E84B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216539CE22E5B41E009E84B0 /* Main.storyboard */; };
@@ -74,6 +80,12 @@
 		2150C72322E9F20C007BE5CA /* UndeliveredProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UndeliveredProductTableViewCell.xib; sourceTree = "<group>"; };
 		2150C72522E9F22C007BE5CA /* UndeliveredProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndeliveredProductTableViewCell.swift; sourceTree = "<group>"; };
 		2150C72722E9F3EB007BE5CA /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		2150C72B22EA04DB007BE5CA /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
+		2150C72E22EA052F007BE5CA /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		2150C73022EA057F007BE5CA /* OrderHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		2150C73322EA0D84007BE5CA /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		2150C73622EA0DE4007BE5CA /* OrderDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		2150C73822EA0F3F007BE5CA /* OrderDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		216539C722E5B41E009E84B0 /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216539CA22E5B41E009E84B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216539CC22E5B41E009E84B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -122,12 +134,12 @@
 		213BCF5E22E72817008E4F34 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				2150C71D22E9EF90007BE5CA /* Undelivered Products */,
-				213BCF8822E9D8FA008E4F34 /* Drawer */,
-				213BCF5D22E72759008E4F34 /* Quick Order */,
 				216539DC22E5C748009E84B0 /* Login */,
+				213BCF8822E9D8FA008E4F34 /* Drawer */,
+				2150C71D22E9EF90007BE5CA /* Undelivered Products */,
+				2150C72A22EA04C7007BE5CA /* Order History */,
+				213BCF5D22E72759008E4F34 /* Quick Order */,
 				216539F422E60442009E84B0 /* Dashboard */,
-				213BCF7622E873EF008E4F34 /* SideMenuNavigationController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -175,6 +187,7 @@
 		213BCF8822E9D8FA008E4F34 /* Drawer */ = {
 			isa = PBXGroup;
 			children = (
+				213BCF7622E873EF008E4F34 /* SideMenuNavigationController.swift */,
 				213BCF8922E9D90C008E4F34 /* SideDrawerViewController.swift */,
 			);
 			path = Drawer;
@@ -194,6 +207,43 @@
 			children = (
 				2150C72322E9F20C007BE5CA /* UndeliveredProductTableViewCell.xib */,
 				2150C72522E9F22C007BE5CA /* UndeliveredProductTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2150C72A22EA04C7007BE5CA /* Order History */ = {
+			isa = PBXGroup;
+			children = (
+				2150C73222EA0C5C007BE5CA /* Details */,
+				2150C72D22EA0520007BE5CA /* Views */,
+				2150C72B22EA04DB007BE5CA /* OrderHistoryViewController.swift */,
+			);
+			path = "Order History";
+			sourceTree = "<group>";
+		};
+		2150C72D22EA0520007BE5CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2150C72E22EA052F007BE5CA /* OrderHistoryTableViewCell.swift */,
+				2150C73022EA057F007BE5CA /* OrderHistoryTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2150C73222EA0C5C007BE5CA /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				2150C73522EA0DC7007BE5CA /* Views */,
+				2150C73322EA0D84007BE5CA /* OrderDetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		2150C73522EA0DC7007BE5CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2150C73622EA0DE4007BE5CA /* OrderDetailsTableViewCell.xib */,
+				2150C73822EA0F3F007BE5CA /* OrderDetailsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,9 +434,11 @@
 				213BCF6722E744BD008E4F34 /* QuickOrderTableViewCell.xib in Resources */,
 				216539FA22E647EE009E84B0 /* ColumnTableViewHeader.xib in Resources */,
 				216539D522E5B420009E84B0 /* LaunchScreen.storyboard in Resources */,
+				2150C73722EA0DE4007BE5CA /* OrderDetailsTableViewCell.xib in Resources */,
 				2150C72122E9F105007BE5CA /* FilterTableViewCell.xib in Resources */,
 				216539F022E5DD8F009E84B0 /* QuickOrderView.xib in Resources */,
 				2150C72422E9F20C007BE5CA /* UndeliveredProductTableViewCell.xib in Resources */,
+				2150C73122EA057F007BE5CA /* OrderHistoryTableViewCell.xib in Resources */,
 				216539D222E5B420009E84B0 /* Assets.xcassets in Resources */,
 				213BCF6D22E7A220008E4F34 /* FilterView.xib in Resources */,
 				216539D022E5B41E009E84B0 /* Main.storyboard in Resources */,
@@ -450,13 +502,16 @@
 				216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */,
 				2150C72622E9F22C007BE5CA /* UndeliveredProductTableViewCell.swift in Sources */,
 				213BCF6422E742CB008E4F34 /* UIColorExtensions.swift in Sources */,
+				2150C72C22EA04DB007BE5CA /* OrderHistoryViewController.swift in Sources */,
 				213BCF7722E873EF008E4F34 /* SideMenuNavigationController.swift in Sources */,
+				2150C73922EA0F3F007BE5CA /* OrderDetailsTableViewCell.swift in Sources */,
 				216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */,
 				2150C71F22E9EFAC007BE5CA /* UndeliveredProductsViewController.swift in Sources */,
 				213BCF8A22E9D90C008E4F34 /* SideDrawerViewController.swift in Sources */,
 				216539E622E5CB07009E84B0 /* LoginViewDelegate.swift in Sources */,
 				216539EE22E5DD7E009E84B0 /* QuickOrderView.swift in Sources */,
 				216539EC22E5D7FD009E84B0 /* OptionPickerView.swift in Sources */,
+				2150C72F22EA052F007BE5CA /* OrderHistoryTableViewCell.swift in Sources */,
 				2150C72822E9F3EB007BE5CA /* Order.swift in Sources */,
 				213BCF6222E73C27008E4F34 /* ColumnTableViewHeader.swift in Sources */,
 				216539E822E5CC25009E84B0 /* LoginSubview.swift in Sources */,
@@ -465,6 +520,7 @@
 				213BCF7522E7A5FF008E4F34 /* FilterTableViewCell.swift in Sources */,
 				213BCF6B22E788F6008E4F34 /* Product.swift in Sources */,
 				213BCF7122E7A505008E4F34 /* FilterView.swift in Sources */,
+				2150C73422EA0D84007BE5CA /* OrderDetailsViewController.swift in Sources */,
 				216539F622E60458009E84B0 /* DashboardViewController.swift in Sources */,
 				213BCF7A22E88364008E4F34 /* RestaurantSearchTextField.swift in Sources */,
 				213BCF8722E9BB3E008E4F34 /* RestaurantHeaderView.swift in Sources */,

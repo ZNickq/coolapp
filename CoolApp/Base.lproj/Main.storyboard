@@ -455,6 +455,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTy-3N-WPH">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <connections>
+                                                    <segue destination="ZRL-j1-6Wj" kind="show" id="G2s-nV-DvL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -589,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bL5-XO-mf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056" y="1163"/>
+            <point key="canvasLocation" x="1055" y="1163"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="jO6-cW-cBv">
@@ -614,6 +617,113 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXN-EF-tSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="621" y="1164"/>
+        </scene>
+        <!--Order History-->
+        <scene sceneID="rQK-p4-ocr">
+            <objects>
+                <viewController id="ZRL-j1-6Wj" customClass="OrderHistoryViewController" customModule="CoolApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ccO-Yc-6XE">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="698"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W4G-uD-VnX" customClass="RestaurantHeaderView" customModule="CoolApp" customModuleProvider="target">
+                                <rect key="frame" x="19" y="31" width="400" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="W1h-O4-7rw"/>
+                                    <constraint firstAttribute="width" secondItem="W4G-uD-VnX" secondAttribute="height" multiplier="4:1" id="kNo-mo-Hmc"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Reu-gA-81U">
+                                <rect key="frame" x="29" y="146" width="964" height="532"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UuM-Vd-sEu" firstAttribute="trailing" secondItem="Reu-gA-81U" secondAttribute="trailing" constant="31" id="GUb-RT-yqN"/>
+                            <constraint firstItem="UuM-Vd-sEu" firstAttribute="bottom" secondItem="Reu-gA-81U" secondAttribute="bottom" constant="20" id="IHw-fc-t3L"/>
+                            <constraint firstItem="W4G-uD-VnX" firstAttribute="leading" secondItem="UuM-Vd-sEu" secondAttribute="leading" constant="19" id="Li4-Cm-Pgr"/>
+                            <constraint firstItem="W4G-uD-VnX" firstAttribute="top" secondItem="UuM-Vd-sEu" secondAttribute="top" constant="31" id="aDm-Ee-iFe"/>
+                            <constraint firstItem="Reu-gA-81U" firstAttribute="leading" secondItem="UuM-Vd-sEu" secondAttribute="leading" constant="29" id="akj-xX-oSl"/>
+                            <constraint firstItem="Reu-gA-81U" firstAttribute="top" secondItem="W4G-uD-VnX" secondAttribute="bottom" constant="15" id="qFV-Fm-ewK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UuM-Vd-sEu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order History" id="V6n-ki-cMU">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Navigation Drawer" id="b1h-Ez-fwH">
+                            <connections>
+                                <segue destination="Ugg-8e-a3Q" kind="presentation" id="UXJ-3d-bTN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bigRestaurantView" destination="W4G-uD-VnX" id="8PB-M4-Ndj"/>
+                        <outlet property="columnedTableView" destination="Reu-gA-81U" id="8a8-Pg-boD"/>
+                        <segue destination="ydL-TU-oQJ" kind="show" identifier="showOrderDetails" id="6M7-DL-fhJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8r7-Dz-3cG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1642" y="1948"/>
+        </scene>
+        <!--Order Details-->
+        <scene sceneID="1Uv-ML-X4W">
+            <objects>
+                <viewController id="ydL-TU-oQJ" customClass="OrderDetailsViewController" customModule="CoolApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FFM-IA-yJL">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="698"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yd7-Xy-WHs" customClass="RestaurantHeaderView" customModule="CoolApp" customModuleProvider="target">
+                                <rect key="frame" x="19" y="31" width="400" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Yd7-Xy-WHs" secondAttribute="height" multiplier="4:1" id="rhR-SL-ZSf"/>
+                                    <constraint firstAttribute="height" constant="100" id="sMq-9g-MI2"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ctz-Xv-OBw">
+                                <rect key="frame" x="29" y="146" width="964" height="462"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dly-F0-FpM">
+                                <rect key="frame" x="843" y="619" width="150" height="63.5"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63.5" id="T6a-f6-1iF"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="of4-Qf-K1A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="UniversLTStd-Bold" family="Univers LT Std" pointSize="18"/>
+                                <state key="normal" title="Total: $10000">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ctz-Xv-OBw" firstAttribute="leading" secondItem="87p-C0-OjG" secondAttribute="leading" constant="29" id="7LD-CE-Jk7"/>
+                            <constraint firstItem="87p-C0-OjG" firstAttribute="trailing" secondItem="Dly-F0-FpM" secondAttribute="trailing" constant="31" id="ECL-eK-iUj"/>
+                            <constraint firstItem="87p-C0-OjG" firstAttribute="bottom" secondItem="ctz-Xv-OBw" secondAttribute="bottom" constant="90" id="IhX-to-NxZ"/>
+                            <constraint firstItem="Dly-F0-FpM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="87p-C0-OjG" secondAttribute="leading" constant="10" id="Jo2-Ho-OlV"/>
+                            <constraint firstItem="ctz-Xv-OBw" firstAttribute="top" secondItem="Yd7-Xy-WHs" secondAttribute="bottom" constant="15" id="cE7-N0-fBH"/>
+                            <constraint firstItem="87p-C0-OjG" firstAttribute="trailing" secondItem="ctz-Xv-OBw" secondAttribute="trailing" constant="31" id="kSp-ba-EV2"/>
+                            <constraint firstItem="Yd7-Xy-WHs" firstAttribute="top" secondItem="87p-C0-OjG" secondAttribute="top" constant="31" id="mgg-o0-LsL"/>
+                            <constraint firstItem="87p-C0-OjG" firstAttribute="bottom" secondItem="Dly-F0-FpM" secondAttribute="bottom" constant="15.5" id="pxD-y3-B60"/>
+                            <constraint firstItem="Yd7-Xy-WHs" firstAttribute="leading" secondItem="87p-C0-OjG" secondAttribute="leading" constant="19" id="syD-eO-LcX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="87p-C0-OjG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order Details" id="PsW-EC-fbC"/>
+                    <connections>
+                        <outlet property="bigRestaurantView" destination="Yd7-Xy-WHs" id="0j3-rH-zW2"/>
+                        <outlet property="columnedTableView" destination="ctz-Xv-OBw" id="ZVB-cS-HL4"/>
+                        <outlet property="totalPriceButton" destination="Dly-F0-FpM" id="aY4-lm-03h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mR5-v4-TBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2367.7734375" y="1947.65625"/>
         </scene>
     </scenes>
     <resources>

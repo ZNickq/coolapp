@@ -75,21 +75,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // And some Orders
             
+            let todayDate = Date()
             let orders = (500..<515).map { each -> Order in
                 let id = each
                 let code = randomHash(12)
-                let date = Date()
+                
+                let daysToSubtract = -1 * Int.random(in: 0 ..< 16)
+                let date = Calendar.current.date(byAdding: .day, value: daysToSubtract, to: todayDate) ?? Date()
+                
                 let cachedPrice = Double.random(in: 10.0 ..< 200.0)
-                return Order(id: id, code: code, date: date, cachedPrice: cachedPrice)
+                return Order(id: id, code: code, date: date)
             }
             
             let orderedProducts = (400..<440).map { each -> OrderedProduct in
                 let id = each
                 let order = orders.randomElement()!
                 let product = allProducts.randomElement()!
-                let price = Double.random(in: 10.0 ..< 100.0)
+                let quant = Double.random(in: 1.0 ..< 10.0)
                 let delivered = Bool.random()
-                return OrderedProduct(id: id, order: order, product: product, price: price, delivered: delivered)
+                return OrderedProduct(id: id, order: order, product: product, quantity: Int(quant), delivered: delivered)
             }
             
             
