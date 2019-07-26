@@ -14,6 +14,8 @@ class QuickOrderViewController: ColumnTableViewController {
 
     @IBOutlet weak var bigRestaurantView: RestaurantHeaderView!
     
+    var vendorFilter: Vendor? = nil // Only used when being accessed from the vendor list
+    
     var products: [Product] = []
     var quantities: [Product: Int] = [:]
     
@@ -26,6 +28,12 @@ class QuickOrderViewController: ColumnTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let vendorFilter = vendorFilter {
+            self.title = "\(vendorFilter.name)"
+            self.navigationItem.leftBarButtonItem = nil
+            self.navigationItem.rightBarButtonItems = nil
+        }
         
         filterView.delegate = self
         
@@ -46,7 +54,7 @@ class QuickOrderViewController: ColumnTableViewController {
         }
         bigRestaurantView.configure(restaurant: restaurant)
         
-        products = AppDelegate.shared.realm.objects(Product.self).map { $0 }
+        products = queryProducts().map { $0 }
         columnedTableView.reloadData()
     }
     
@@ -76,6 +84,46 @@ class QuickOrderViewController: ColumnTableViewController {
         }
     }
     
+    @IBAction func placeOrderTapped(_ sender: Any) {
+        let maxOrderId: Int? = AppDelegate.shared.realm.objects(Order.self).max(ofProperty: "id")
+        let maxOrderedProductId: Int? = AppDelegate.shared.realm.objects(OrderedProduct.self).max(ofProperty: "id")
+        guard let newId = maxOrderId else {
+            return
+        }
+        let order = Order(id: newId + 1, code: String.randomHash(), date: Date())
+        let productQuants: [Product: Int] = quantities.filter { $0.value > 0 }
+        
+        guard !productQuants.isEmpty else {
+            self.showAlert(alertText: "Alert", alertMessage: "You can't send an empty order!")
+            return
+        }
+        
+        guard var currentOrderedProductId = maxOrderedProductId else {
+            return
+        }
+        
+        let orderedProducts = productQuants.map { (key, value) -> OrderedProduct in
+            currentOrderedProductId += 1
+            return OrderedProduct(id: currentOrderedProductId, order: order, product: key, quantity: value, delivered: false)
+        }
+        
+        do {
+            try AppDelegate.shared.realm.write {
+                AppDelegate.shared.realm.add(orderedProducts)
+            }
+            self.showAlert(alertText: "Alert", alertMessage: "Order sent successfully!")
+            self.resetQuantities()
+        } catch {
+            self.showAlert(alertText: "Alert", alertMessage: "Order could not be saved!")
+        }
+        
+    }
+    
+    func resetQuantities() {
+        quantities = [:]
+        columnedTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
     }
@@ -86,6 +134,14 @@ class QuickOrderViewController: ColumnTableViewController {
         }
         quantities[product] = 0
         return 0
+    }
+    
+    private func queryProducts() -> Results<Product> {
+        var results = AppDelegate.shared.realm.objects(Product.self)
+        if let vendor = vendorFilter {
+            results = results.filter("vendor == %@", vendor)
+        }
+        return results
     }
 
 }
@@ -129,7 +185,7 @@ extension QuickOrderViewController: FilterViewDelegate {
     }
     
     func filterViewSwitchesChanged(newStates: [Int : Bool]) {
-        products = AppDelegate.shared.realm.objects(Product.self).filter { newStates[$0.category?.id ?? -1] ?? false == true }
+        products = queryProducts().filter { newStates[$0.category?.id ?? -1] ?? false == true }
         
         columnedTableView.reloadData()
     }
@@ -171,10 +227,3 @@ extension QuickOrderViewController: QuickOrderTableViewCellDelegate {
     }
     
 }
-
-//extension QuickOrderViewController: UISideMenuNavigationControllerDelegate {
-//
-//    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
-//        self.view.endEditing(true)
-//    }
-//}

@@ -259,6 +259,7 @@
                     <connections>
                         <outlet property="bigRestaurantView" destination="fNV-mK-x8A" id="jwT-L7-PeW"/>
                         <outlet property="columnedTableView" destination="53m-vm-j6M" id="nmI-BN-Cx9"/>
+                        <segue destination="ydL-TU-oQJ" kind="show" identifier="showOrderDetails" id="cD6-Sb-4ov"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dno-Hi-SSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -316,6 +317,9 @@
                                 <state key="normal" title="Place order &gt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="placeOrderTapped:" destination="nZ0-rv-Rzi" eventType="touchUpInside" id="gxN-Hi-Y9j"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -545,6 +549,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnG-3e-6xq">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <connections>
+                                                    <segue destination="VeC-jz-qdX" kind="show" id="om0-QK-0Dt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -725,6 +732,55 @@
             </objects>
             <point key="canvasLocation" x="2367.7734375" y="1947.65625"/>
         </scene>
+        <!--Vendor List-->
+        <scene sceneID="hwF-Up-THb">
+            <objects>
+                <viewController id="VeC-jz-qdX" customClass="VendorListViewController" customModule="CoolApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AqT-va-8M6">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="698"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ob2-JT-GFQ" customClass="RestaurantHeaderView" customModule="CoolApp" customModuleProvider="target">
+                                <rect key="frame" x="19" y="31" width="400" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ob2-JT-GFQ" secondAttribute="height" multiplier="4:1" id="C81-JQ-4LU"/>
+                                    <constraint firstAttribute="height" constant="100" id="ui1-mk-mYx"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wig-fQ-eJD">
+                                <rect key="frame" x="29" y="146" width="964" height="532"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wig-fQ-eJD" firstAttribute="top" secondItem="Ob2-JT-GFQ" secondAttribute="bottom" constant="15" id="1It-yk-AA6"/>
+                            <constraint firstItem="VjZ-Ng-X1g" firstAttribute="bottom" secondItem="wig-fQ-eJD" secondAttribute="bottom" constant="20" id="Bow-vu-pMi"/>
+                            <constraint firstItem="VjZ-Ng-X1g" firstAttribute="trailing" secondItem="wig-fQ-eJD" secondAttribute="trailing" constant="31" id="WUs-pY-Ecv"/>
+                            <constraint firstItem="Ob2-JT-GFQ" firstAttribute="leading" secondItem="VjZ-Ng-X1g" secondAttribute="leading" constant="19" id="hRi-H5-JeF"/>
+                            <constraint firstItem="Ob2-JT-GFQ" firstAttribute="top" secondItem="VjZ-Ng-X1g" secondAttribute="top" constant="31" id="rHF-7f-hTq"/>
+                            <constraint firstItem="wig-fQ-eJD" firstAttribute="leading" secondItem="VjZ-Ng-X1g" secondAttribute="leading" constant="29" id="sFU-ep-G57"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VjZ-Ng-X1g"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Vendor List" id="RiS-xk-sDh">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Navigation Drawer" id="GZQ-JP-uFQ">
+                            <connections>
+                                <segue destination="Ugg-8e-a3Q" kind="presentation" id="D6G-Wd-B5I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bigRestaurantView" destination="Ob2-JT-GFQ" id="bwU-Ni-PiL"/>
+                        <outlet property="columnedTableView" destination="wig-fQ-eJD" id="9S2-zl-aSQ"/>
+                        <segue destination="nZ0-rv-Rzi" kind="show" identifier="showFilteredQuickOrder" id="z2F-Fd-Fxm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z32-UL-dbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="1948"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Cool Logo" width="42.666667938232422" height="42.666667938232422"/>
@@ -737,7 +793,8 @@
         <image name="Shopping cart Plus" width="42.666667938232422" height="42.666667938232422"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dah-0j-lhd"/>
-        <segue reference="n1S-VM-zlT"/>
+        <segue reference="cD6-Sb-4ov"/>
+        <segue reference="D6G-Wd-B5I"/>
+        <segue reference="z2F-Fd-Fxm"/>
     </inferredMetricsTieBreakers>
 </document>

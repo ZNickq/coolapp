@@ -22,7 +22,9 @@ class Product: RealmSwift.Object {
     
     @objc dynamic var price = 0.0
     
-    convenience init(id: Int, name: String, category: ProductCategory, consumptionHistory: ConsumptionHistory? = nil, availableStock: Int, stockSuggestion: Int, price: Double) {
+    @objc dynamic var vendor: Vendor? = nil
+    
+    convenience init(id: Int, name: String, category: ProductCategory, consumptionHistory: ConsumptionHistory? = nil, availableStock: Int, stockSuggestion: Int, price: Double, vendor: Vendor) {
         self.init()
         
         self.name = name
@@ -33,6 +35,8 @@ class Product: RealmSwift.Object {
         self.availableStock = availableStock
         self.stockSuggestion = stockSuggestion
         self.price = price
+        
+        self.vendor = vendor
     }
 
 }

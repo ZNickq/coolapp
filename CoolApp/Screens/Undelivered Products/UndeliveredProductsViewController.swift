@@ -50,6 +50,17 @@ class UndeliveredProductsViewController: ColumnTableViewController {
         return [first, second, third, fourth, fifth]
     }
     
+    private var tappedOrder: Order?
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showOrderDetails" else {
+            return
+        }
+        guard let destVC = segue.destination as? OrderDetailsViewController else {
+            return
+        }
+        destVC.selectedOrder = tappedOrder
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
     }
@@ -72,9 +83,26 @@ extension UndeliveredProductsViewController: UITableViewDataSource {
         }
         
         cell.configure(orderedProduct: product)
+        cell.delegate = self
 
         return cell;
     }
     
+}
+
+extension UndeliveredProductsViewController: UndeliveredProductTableViewCellDelegate {
+    
+    
+    func detailsTapped(cell: UndeliveredProductTableViewCell) {
+        guard let indexPath = columnedTableView.indexPath(for: cell) else {
+            return
+        }
+        guard let tappedOrder = products?[indexPath.row].order else {
+            return
+        }
+        self.tappedOrder = tappedOrder
+        
+        self.performSegue(withIdentifier: "showOrderDetails", sender: self)
+    }
     
 }

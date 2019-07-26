@@ -25,16 +25,19 @@ class RestaurantSearchTextField: SearchTextField {
         super.layoutSubviews()
         
         if !setupDone {
+            setupDone = true
             setupField()
         }
     }
     
     private func setupField() {
+        typingStoppedDelay = 0.5
+        
         theme.font = UIFont.systemFont(ofSize: 15)
         
         userStoppedTypingHandler = {
             if let criteria = self.text {
-                if criteria.count > 1 {
+                if criteria.count > 0 {
                     self.showLoadingIndicator()
                     
                     self.searchMoreItemsInBackground(criteria) { results in

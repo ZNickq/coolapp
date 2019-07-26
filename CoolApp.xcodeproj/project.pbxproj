@@ -35,6 +35,12 @@
 		2150C73422EA0D84007BE5CA /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C73322EA0D84007BE5CA /* OrderDetailsViewController.swift */; };
 		2150C73722EA0DE4007BE5CA /* OrderDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2150C73622EA0DE4007BE5CA /* OrderDetailsTableViewCell.xib */; };
 		2150C73922EA0F3F007BE5CA /* OrderDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C73822EA0F3F007BE5CA /* OrderDetailsTableViewCell.swift */; };
+		2150C73B22EAF51D007BE5CA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C73A22EAF51D007BE5CA /* StringExtension.swift */; };
+		2150C73D22EB087D007BE5CA /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C73C22EB087D007BE5CA /* ViewControllerExtension.swift */; };
+		2150C74022EB0AD3007BE5CA /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C73F22EB0AD3007BE5CA /* Vendor.swift */; };
+		2150C74322EB1E93007BE5CA /* VendorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C74222EB1E93007BE5CA /* VendorListViewController.swift */; };
+		2150C74622EB1EFC007BE5CA /* VendorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2150C74522EB1EFC007BE5CA /* VendorTableViewCell.xib */; };
+		2150C74822EB1F31007BE5CA /* VendorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150C74722EB1F31007BE5CA /* VendorTableViewCell.swift */; };
 		216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CA22E5B41E009E84B0 /* AppDelegate.swift */; };
 		216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216539CC22E5B41E009E84B0 /* LoginViewController.swift */; };
 		216539D022E5B41E009E84B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216539CE22E5B41E009E84B0 /* Main.storyboard */; };
@@ -86,6 +92,12 @@
 		2150C73322EA0D84007BE5CA /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		2150C73622EA0DE4007BE5CA /* OrderDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		2150C73822EA0F3F007BE5CA /* OrderDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		2150C73A22EAF51D007BE5CA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		2150C73C22EB087D007BE5CA /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		2150C73F22EB0AD3007BE5CA /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
+		2150C74222EB1E93007BE5CA /* VendorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorListViewController.swift; sourceTree = "<group>"; };
+		2150C74522EB1EFC007BE5CA /* VendorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VendorTableViewCell.xib; sourceTree = "<group>"; };
+		2150C74722EB1F31007BE5CA /* VendorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorTableViewCell.swift; sourceTree = "<group>"; };
 		216539C722E5B41E009E84B0 /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216539CA22E5B41E009E84B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216539CC22E5B41E009E84B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 				2150C71D22E9EF90007BE5CA /* Undelivered Products */,
 				2150C72A22EA04C7007BE5CA /* Order History */,
 				213BCF5D22E72759008E4F34 /* Quick Order */,
+				2150C74122EB1E78007BE5CA /* Vendor List */,
 				216539F422E60442009E84B0 /* Dashboard */,
 			);
 			path = Screens;
@@ -248,6 +261,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2150C73E22EB0880007BE5CA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				213BCF6322E742CB008E4F34 /* UIColorExtensions.swift */,
+				2150C73A22EAF51D007BE5CA /* StringExtension.swift */,
+				2150C73C22EB087D007BE5CA /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2150C74122EB1E78007BE5CA /* Vendor List */ = {
+			isa = PBXGroup;
+			children = (
+				2150C74422EB1EF0007BE5CA /* Views */,
+				2150C74222EB1E93007BE5CA /* VendorListViewController.swift */,
+			);
+			path = "Vendor List";
+			sourceTree = "<group>";
+		};
+		2150C74422EB1EF0007BE5CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2150C74522EB1EFC007BE5CA /* VendorTableViewCell.xib */,
+				2150C74722EB1F31007BE5CA /* VendorTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		216539BE22E5B41E009E84B0 = {
 			isa = PBXGroup;
 			children = (
@@ -309,10 +350,10 @@
 		216539E022E5C937009E84B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2150C73E22EB0880007BE5CA /* Extensions */,
 				213BCF8222E9B9CF008E4F34 /* Views */,
 				216539F722E647B0009E84B0 /* Table */,
 				216539E122E5C954009E84B0 /* NibView.swift */,
-				213BCF6322E742CB008E4F34 /* UIColorExtensions.swift */,
 				213BCF8022E9B6EC008E4F34 /* Configuration.swift */,
 			);
 			path = Util;
@@ -324,6 +365,7 @@
 				216539F222E5F100009E84B0 /* Restaurant.swift */,
 				213BCF6A22E788F6008E4F34 /* Product.swift */,
 				2150C72722E9F3EB007BE5CA /* Order.swift */,
+				2150C73F22EB0AD3007BE5CA /* Vendor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -440,6 +482,7 @@
 				2150C72422E9F20C007BE5CA /* UndeliveredProductTableViewCell.xib in Resources */,
 				2150C73122EA057F007BE5CA /* OrderHistoryTableViewCell.xib in Resources */,
 				216539D222E5B420009E84B0 /* Assets.xcassets in Resources */,
+				2150C74622EB1EFC007BE5CA /* VendorTableViewCell.xib in Resources */,
 				213BCF6D22E7A220008E4F34 /* FilterView.xib in Resources */,
 				216539D022E5B41E009E84B0 /* Main.storyboard in Resources */,
 				213BCF8522E9B9F5008E4F34 /* RestaurantHeaderView.xib in Resources */,
@@ -500,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				216539CD22E5B41E009E84B0 /* LoginViewController.swift in Sources */,
+				2150C73B22EAF51D007BE5CA /* StringExtension.swift in Sources */,
 				2150C72622E9F22C007BE5CA /* UndeliveredProductTableViewCell.swift in Sources */,
 				213BCF6422E742CB008E4F34 /* UIColorExtensions.swift in Sources */,
 				2150C72C22EA04DB007BE5CA /* OrderHistoryViewController.swift in Sources */,
@@ -508,16 +552,20 @@
 				216539CB22E5B41E009E84B0 /* AppDelegate.swift in Sources */,
 				2150C71F22E9EFAC007BE5CA /* UndeliveredProductsViewController.swift in Sources */,
 				213BCF8A22E9D90C008E4F34 /* SideDrawerViewController.swift in Sources */,
+				2150C74322EB1E93007BE5CA /* VendorListViewController.swift in Sources */,
 				216539E622E5CB07009E84B0 /* LoginViewDelegate.swift in Sources */,
 				216539EE22E5DD7E009E84B0 /* QuickOrderView.swift in Sources */,
 				216539EC22E5D7FD009E84B0 /* OptionPickerView.swift in Sources */,
 				2150C72F22EA052F007BE5CA /* OrderHistoryTableViewCell.swift in Sources */,
+				2150C74822EB1F31007BE5CA /* VendorTableViewCell.swift in Sources */,
 				2150C72822E9F3EB007BE5CA /* Order.swift in Sources */,
 				213BCF6222E73C27008E4F34 /* ColumnTableViewHeader.swift in Sources */,
 				216539E822E5CC25009E84B0 /* LoginSubview.swift in Sources */,
 				213BCF8122E9B6EC008E4F34 /* Configuration.swift in Sources */,
+				2150C74022EB0AD3007BE5CA /* Vendor.swift in Sources */,
 				216539E222E5C954009E84B0 /* NibView.swift in Sources */,
 				213BCF7522E7A5FF008E4F34 /* FilterTableViewCell.swift in Sources */,
+				2150C73D22EB087D007BE5CA /* ViewControllerExtension.swift in Sources */,
 				213BCF6B22E788F6008E4F34 /* Product.swift in Sources */,
 				213BCF7122E7A505008E4F34 /* FilterView.swift in Sources */,
 				2150C73422EA0D84007BE5CA /* OrderDetailsViewController.swift in Sources */,
